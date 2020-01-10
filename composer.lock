@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eccbe51bcccee2b3c86cc51d10b2929",
+    "content-hash": "a25db108f95243ca5ff6e108df9dc664",
     "packages": [
         {
             "name": "aura/router",
@@ -119,23 +119,23 @@
         },
         {
             "name": "daikon/async-job",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/async-job.git",
-                "reference": "2ccacec7c1cd8040e7700ca7206289bd2d323c5d"
+                "reference": "395b695c42727f062faa4d71620aaf30595f5269"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/2ccacec7c1cd8040e7700ca7206289bd2d323c5d",
-                "reference": "2ccacec7c1cd8040e7700ca7206289bd2d323c5d",
+                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/395b695c42727f062faa4d71620aaf30595f5269",
+                "reference": "395b695c42727f062faa4d71620aaf30595f5269",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^v3.0",
-                "daikon/data-structure": "dev-feature/php74",
-                "daikon/message-bus": "dev-feature/php74",
-                "daikon/metadata": "dev-feature/php74",
+                "daikon/data-structure": "master@dev",
+                "daikon/message-bus": "master@dev",
+                "daikon/metadata": "master@dev",
                 "php": "^7.4"
             },
             "require-dev": {
@@ -163,20 +163,20 @@
                 "job",
                 "worker"
             ],
-            "time": "2020-01-04T22:44:15+00:00"
+            "time": "2020-01-10T13:37:13+00:00"
         },
         {
             "name": "daikon/config",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "752589e7e8e2f682d27e3fe3b1a456090ae4b485"
+                "reference": "a94084037506a06a5904fce04d73247f1d737f39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/752589e7e8e2f682d27e3fe3b1a456090ae4b485",
-                "reference": "752589e7e8e2f682d27e3fe3b1a456090ae4b485",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/a94084037506a06a5904fce04d73247f1d737f39",
+                "reference": "a94084037506a06a5904fce04d73247f1d737f39",
                 "shasum": ""
             },
             "require": {
@@ -206,25 +206,25 @@
             "keywords": [
                 "config"
             ],
-            "time": "2020-01-05T22:13:22+00:00"
+            "time": "2020-01-10T14:03:05+00:00"
         },
         {
             "name": "daikon/couchdb-adapter",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "6ad399fe1477cd4a73c6a8cfbe8463e85a388e2c"
+                "reference": "b69fa592412199b2261ca5abaa2a21815df388bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/6ad399fe1477cd4a73c6a8cfbe8463e85a388e2c",
-                "reference": "6ad399fe1477cd4a73c6a8cfbe8463e85a388e2c",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/b69fa592412199b2261ca5abaa2a21815df388bc",
+                "reference": "b69fa592412199b2261ca5abaa2a21815df388bc",
                 "shasum": ""
             },
             "require": {
-                "daikon/dbal": "dev-feature/php74",
-                "daikon/event-sourcing": "dev-feature/php74",
+                "daikon/dbal": "master@dev",
+                "daikon/event-sourcing": "master@dev",
                 "guzzlehttp/guzzle": "^6.3",
                 "php": "^7.4"
             },
@@ -250,20 +250,20 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2020-01-05T13:00:08+00:00"
+            "time": "2020-01-10T13:51:39+00:00"
         },
         {
             "name": "daikon/data-structure",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "0eb792134f6f27c22a362a6b034127d4fa3049d6"
+                "reference": "a073e74efa77933a5f9461d7dd48a170c25c9b47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/0eb792134f6f27c22a362a6b034127d4fa3049d6",
-                "reference": "0eb792134f6f27c22a362a6b034127d4fa3049d6",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/a073e74efa77933a5f9461d7dd48a170c25c9b47",
+                "reference": "a073e74efa77933a5f9461d7dd48a170c25c9b47",
                 "shasum": ""
             },
             "require": {
@@ -296,28 +296,28 @@
                 "map",
                 "vector"
             ],
-            "time": "2020-01-03T15:15:30+00:00"
+            "time": "2020-01-10T13:05:24+00:00"
         },
         {
             "name": "daikon/dbal",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "9646a60ef1aae5d623b85fe7598492647d7d6697"
+                "reference": "0818419eb2e330a1c5ebea413cef32c5dc877a34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/9646a60ef1aae5d623b85fe7598492647d7d6697",
-                "reference": "9646a60ef1aae5d623b85fe7598492647d7d6697",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/0818419eb2e330a1c5ebea413cef32c5dc877a34",
+                "reference": "0818419eb2e330a1c5ebea413cef32c5dc877a34",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^3.0",
-                "daikon/data-structure": "dev-feature/php74",
-                "daikon/event-sourcing": "dev-feature/php74",
-                "daikon/interop": "dev-feature/php74",
-                "daikon/read-model": "dev-feature/php74",
+                "daikon/data-structure": "master@dev",
+                "daikon/event-sourcing": "master@dev",
+                "daikon/interop": "master@dev",
+                "daikon/read-model": "master@dev",
                 "php": "^7.4"
             },
             "require-dev": {
@@ -343,26 +343,26 @@
                 "dbal",
                 "immutable"
             ],
-            "time": "2020-01-05T12:20:35+00:00"
+            "time": "2020-01-10T13:49:26+00:00"
         },
         {
             "name": "daikon/elasticsearch7-adapter",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/elasticsearch7-adapter.git",
-                "reference": "e9daed8d948bbfa839ddd31da64baa1fad1af8e2"
+                "reference": "58116d31452c28f1e59ac823cd55f158da12ef2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch7-adapter/zipball/e9daed8d948bbfa839ddd31da64baa1fad1af8e2",
-                "reference": "e9daed8d948bbfa839ddd31da64baa1fad1af8e2",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch7-adapter/zipball/58116d31452c28f1e59ac823cd55f158da12ef2e",
+                "reference": "58116d31452c28f1e59ac823cd55f158da12ef2e",
                 "shasum": ""
             },
             "require": {
-                "daikon/dbal": "dev-feature/php74",
-                "daikon/metadata": "dev-feature/php74",
-                "daikon/read-model": "dev-feature/php74",
+                "daikon/dbal": "master@dev",
+                "daikon/metadata": "master@dev",
+                "daikon/read-model": "master@dev",
                 "elasticsearch/elasticsearch": "^7.0",
                 "php": "^7.4"
             },
@@ -388,27 +388,27 @@
                 "adapter",
                 "elasticsearch"
             ],
-            "time": "2020-01-05T13:58:45+00:00"
+            "time": "2020-01-10T13:53:41+00:00"
         },
         {
             "name": "daikon/entity",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/entity.git",
-                "reference": "d16dcc6875de4f02ee3837332483e7dd2b108111"
+                "reference": "b959755a98210ede7eff3d19230025645261888e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/d16dcc6875de4f02ee3837332483e7dd2b108111",
-                "reference": "d16dcc6875de4f02ee3837332483e7dd2b108111",
+                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/b959755a98210ede7eff3d19230025645261888e",
+                "reference": "b959755a98210ede7eff3d19230025645261888e",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^3.0",
-                "daikon/data-structure": "dev-feature/php74",
-                "daikon/interop": "dev-feature/php74",
-                "daikon/value-object": "dev-feature/php74",
+                "daikon/data-structure": "master@dev",
+                "daikon/interop": "master@dev",
+                "daikon/value-object": "master@dev",
                 "jms/parser-lib": "^1.0",
                 "php": "^7.4"
             },
@@ -435,28 +435,28 @@
                 "entity",
                 "generic"
             ],
-            "time": "2020-01-04T18:57:25+00:00"
+            "time": "2020-01-10T13:24:30+00:00"
         },
         {
             "name": "daikon/event-sourcing",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "50b196b007f71a9b9aa1b57f8c97f8c509ccb71d"
+                "reference": "7e220539d48d7528f1886b22ca31059f3b21d6b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/50b196b007f71a9b9aa1b57f8c97f8c509ccb71d",
-                "reference": "50b196b007f71a9b9aa1b57f8c97f8c509ccb71d",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/7e220539d48d7528f1886b22ca31059f3b21d6b3",
+                "reference": "7e220539d48d7528f1886b22ca31059f3b21d6b3",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^3.0",
-                "daikon/interop": "dev-feature/php74",
-                "daikon/message-bus": "dev-feature/php74",
-                "daikon/metadata": "dev-feature/php74",
-                "daikon/value-object": "dev-feature/php74",
+                "daikon/interop": "master@dev",
+                "daikon/message-bus": "master@dev",
+                "daikon/metadata": "master@dev",
+                "daikon/value-object": "master@dev",
                 "php": "^7.4"
             },
             "require-dev": {
@@ -482,24 +482,24 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2020-01-04T22:31:43+00:00"
+            "time": "2020-01-10T13:39:58+00:00"
         },
         {
             "name": "daikon/flysystem-adapter",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/flysystem-adapter.git",
-                "reference": "106598a7e41f0bca82da45ba8248ddd8c175a209"
+                "reference": "ff50995dcdf1fc430a90e2f62dc889c322f94c5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/flysystem-adapter/zipball/106598a7e41f0bca82da45ba8248ddd8c175a209",
-                "reference": "106598a7e41f0bca82da45ba8248ddd8c175a209",
+                "url": "https://api.github.com/repos/daikon-cqrs/flysystem-adapter/zipball/ff50995dcdf1fc430a90e2f62dc889c322f94c5c",
+                "reference": "ff50995dcdf1fc430a90e2f62dc889c322f94c5c",
                 "shasum": ""
             },
             "require": {
-                "daikon/dbal": "dev-feature/php74",
+                "daikon/dbal": "master@dev",
                 "league/flysystem": "^1.0",
                 "php": "^7.4"
             },
@@ -525,20 +525,20 @@
                 "Flysystem",
                 "adapter"
             ],
-            "time": "2020-01-05T14:02:45+00:00"
+            "time": "2020-01-10T13:55:06+00:00"
         },
         {
             "name": "daikon/interop",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/interop.git",
-                "reference": "4d8ce47a81a40d4881301124a82eda7bded977a5"
+                "reference": "44f02fd660c4210fc8aec89e92750752f71350c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/4d8ce47a81a40d4881301124a82eda7bded977a5",
-                "reference": "4d8ce47a81a40d4881301124a82eda7bded977a5",
+                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/44f02fd660c4210fc8aec89e92750752f71350c9",
+                "reference": "44f02fd660c4210fc8aec89e92750752f71350c9",
                 "shasum": ""
             },
             "require": {
@@ -562,26 +562,26 @@
             ],
             "description": "Interop components used across Daikon components.",
             "homepage": "https://github.com/daikon-cqrs/interop",
-            "time": "2020-01-04T21:37:28+00:00"
+            "time": "2020-01-10T13:01:44+00:00"
         },
         {
             "name": "daikon/message-bus",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "d540ac62589de48a648c13bc4d671732f14d2000"
+                "reference": "e3c46b14cd0cd03619da50a10ef8d87db59bac42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/d540ac62589de48a648c13bc4d671732f14d2000",
-                "reference": "d540ac62589de48a648c13bc4d671732f14d2000",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/e3c46b14cd0cd03619da50a10ef8d87db59bac42",
+                "reference": "e3c46b14cd0cd03619da50a10ef8d87db59bac42",
                 "shasum": ""
             },
             "require": {
-                "daikon/data-structure": "dev-feature/php74",
-                "daikon/interop": "dev-feature/php74",
-                "daikon/metadata": "dev-feature/php74",
+                "daikon/data-structure": "master@dev",
+                "daikon/interop": "master@dev",
+                "daikon/metadata": "master@dev",
                 "php": "^7.4",
                 "ramsey/uuid": "^3.8"
             },
@@ -607,25 +607,25 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2020-01-04T19:34:48+00:00"
+            "time": "2020-01-10T13:29:02+00:00"
         },
         {
             "name": "daikon/metadata",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/metadata.git",
-                "reference": "566cdab2e95a883e1feee8de260586ff7bc060af"
+                "reference": "f3cea71ea460f7c01f038fbbf03dc156a7ff93fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/metadata/zipball/566cdab2e95a883e1feee8de260586ff7bc060af",
-                "reference": "566cdab2e95a883e1feee8de260586ff7bc060af",
+                "url": "https://api.github.com/repos/daikon-cqrs/metadata/zipball/f3cea71ea460f7c01f038fbbf03dc156a7ff93fe",
+                "reference": "f3cea71ea460f7c01f038fbbf03dc156a7ff93fe",
                 "shasum": ""
             },
             "require": {
-                "daikon/data-structure": "dev-feature/php74",
-                "daikon/interop": "dev-feature/php74",
+                "daikon/data-structure": "master@dev",
+                "daikon/interop": "master@dev",
                 "php": "^7.4"
             },
             "require-dev": {
@@ -650,27 +650,27 @@
                 "enricher",
                 "metadata"
             ],
-            "time": "2020-01-04T19:27:10+00:00"
+            "time": "2020-01-10T13:18:27+00:00"
         },
         {
             "name": "daikon/rabbitmq3-adapter",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/rabbitmq3-adapter.git",
-                "reference": "fb1c8f82726fcb6494517adc04dda42b5ac073e5"
+                "reference": "90b3c1f57903c34d3c1fc6a78e8aeb402d20fa37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/fb1c8f82726fcb6494517adc04dda42b5ac073e5",
-                "reference": "fb1c8f82726fcb6494517adc04dda42b5ac073e5",
+                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/90b3c1f57903c34d3c1fc6a78e8aeb402d20fa37",
+                "reference": "90b3c1f57903c34d3c1fc6a78e8aeb402d20fa37",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^v3.0",
-                "daikon/async-job": "dev-feature/php74",
-                "daikon/dbal": "dev-feature/php74",
-                "daikon/message-bus": "dev-feature/php74",
+                "daikon/async-job": "master@dev",
+                "daikon/dbal": "master@dev",
+                "daikon/message-bus": "master@dev",
                 "php": "^7.4",
                 "php-amqplib/php-amqplib": "^v2.8"
             },
@@ -696,29 +696,29 @@
                 "adapter",
                 "rabbitmq3"
             ],
-            "time": "2020-01-05T14:23:38+00:00"
+            "time": "2020-01-10T13:57:04+00:00"
         },
         {
             "name": "daikon/read-model",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "c0e4aa9fd009062804fa2b798f768e9acab8b0f2"
+                "reference": "330ddc21d95ae6f0388c4d24ffbad3e229c01524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/c0e4aa9fd009062804fa2b798f768e9acab8b0f2",
-                "reference": "c0e4aa9fd009062804fa2b798f768e9acab8b0f2",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/330ddc21d95ae6f0388c4d24ffbad3e229c01524",
+                "reference": "330ddc21d95ae6f0388c4d24ffbad3e229c01524",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^3.0",
-                "daikon/data-structure": "dev-feature/php74",
-                "daikon/event-sourcing": "dev-feature/php74",
-                "daikon/interop": "dev-feature/php74",
-                "daikon/message-bus": "dev-feature/php74",
-                "daikon/metadata": "dev-feature/php74",
+                "daikon/data-structure": "master@dev",
+                "daikon/event-sourcing": "master@dev",
+                "daikon/interop": "master@dev",
+                "daikon/message-bus": "master@dev",
+                "daikon/metadata": "master@dev",
                 "php": "^7.4"
             },
             "require-dev": {
@@ -745,26 +745,26 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2020-01-06T12:49:18+00:00"
+            "time": "2020-01-10T13:42:08+00:00"
         },
         {
             "name": "daikon/value-object",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/value-object.git",
-                "reference": "f345a34caa32f5f606b0391da57a79d898a3b575"
+                "reference": "0d64504651815442f9c3b56b17a8c194ff5f4472"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/value-object/zipball/f345a34caa32f5f606b0391da57a79d898a3b575",
-                "reference": "f345a34caa32f5f606b0391da57a79d898a3b575",
+                "url": "https://api.github.com/repos/daikon-cqrs/value-object/zipball/0d64504651815442f9c3b56b17a8c194ff5f4472",
+                "reference": "0d64504651815442f9c3b56b17a8c194ff5f4472",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^3.0",
-                "daikon/data-structure": "dev-feature/php74",
-                "daikon/interop": "dev-feature/php74",
+                "daikon/data-structure": "master@dev",
+                "daikon/interop": "master@dev",
                 "php": "^7.4",
                 "ramsey/uuid": "^3.8"
             },
@@ -789,7 +789,7 @@
             "keywords": [
                 "value-object"
             ],
-            "time": "2020-01-04T18:23:36+00:00"
+            "time": "2020-01-10T13:21:29+00:00"
         },
         {
             "name": "danielstjules/stringy",
@@ -1904,30 +1904,30 @@
         },
         {
             "name": "oroshi/oroshi-core",
-            "version": "dev-feature/php74",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oroshi/oroshi-core.git",
-                "reference": "2ceecf6af15d0e92c416c09b325b638d11bb98f9"
+                "reference": "619f6132c54b67ac5d5aa05025c814e860f93926"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oroshi/oroshi-core/zipball/2ceecf6af15d0e92c416c09b325b638d11bb98f9",
-                "reference": "2ceecf6af15d0e92c416c09b325b638d11bb98f9",
+                "url": "https://api.github.com/repos/oroshi/oroshi-core/zipball/619f6132c54b67ac5d5aa05025c814e860f93926",
+                "reference": "619f6132c54b67ac5d5aa05025c814e860f93926",
                 "shasum": ""
             },
             "require": {
                 "aura/router": "^3.0",
                 "beberlei/assert": "^v3.0",
-                "daikon/config": "dev-feature/php74",
-                "daikon/couchdb-adapter": "dev-feature/php74",
-                "daikon/elasticsearch7-adapter": "dev-feature/php74",
-                "daikon/entity": "dev-feature/php74",
-                "daikon/event-sourcing": "dev-feature/php74",
-                "daikon/flysystem-adapter": "dev-feature/php74",
-                "daikon/metadata": "dev-feature/php74",
-                "daikon/rabbitmq3-adapter": "dev-feature/php74",
-                "daikon/value-object": "dev-feature/php74",
+                "daikon/config": "master@dev",
+                "daikon/couchdb-adapter": "master@dev",
+                "daikon/elasticsearch7-adapter": "master@dev",
+                "daikon/entity": "master@dev",
+                "daikon/event-sourcing": "master@dev",
+                "daikon/flysystem-adapter": "master@dev",
+                "daikon/metadata": "master@dev",
+                "daikon/rabbitmq3-adapter": "master@dev",
+                "daikon/value-object": "master@dev",
                 "danielstjules/stringy": "^3.1",
                 "fig/http-message-util": "^1.1",
                 "franzl/whoops-middleware": "^1.2",
@@ -1960,7 +1960,7 @@
             ],
             "description": "Provisioning and configuration of a Daikon CQRS (app) container.",
             "homepage": "https://github.com/oroshi/oroshi-core",
-            "time": "2020-01-10T11:55:56+00:00"
+            "time": "2020-01-10T14:07:33+00:00"
         },
         {
             "name": "paragonie/random_compat",
