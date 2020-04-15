@@ -73,9 +73,9 @@ final class MoneyServiceValidator implements ValidatorInterface
     private function validate(string $name, $input): MoneyServiceInterface
     {
         Assert::that($input)
-            ->string('Must be a string')
-            ->notBlank('Must not be empty')
-            ->satisfy([$this->moneyServiceMap, 'has'], 'Unknown service');
+            ->string('Must be a string.')
+            ->notBlank('Must not be empty.')
+            ->satisfy([$this->moneyServiceMap, 'has'], 'Unknown service.');
 
         return $this->moneyServiceMap->get($input);
     }

@@ -72,9 +72,9 @@ final class CurrencyValidator implements ValidatorInterface
     private function validate(string $name, $input): Currency
     {
         Assert::that($input)
-            ->string('Must be a string')
-            ->notBlank('Must not be blank')
-            ->inArray($this->options, 'Not acceptable');
+            ->string('Must be a string.')
+            ->notBlank('Must not be blank.')
+            ->inArray($this->options, 'Not acceptable.');
 
         return Currency::fromNative($input);
     }
