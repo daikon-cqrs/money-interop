@@ -83,7 +83,7 @@ final class MoneyValidator implements ValidatorInterface
     private function validate(string $name, $input): Money
     {
         Assert::that($input)
-            ->isArray('Must be an an array.')
+            ->isArray('Must be an array.')
             ->keyExists('amount', 'Amount must be specified.')
             ->keyExists('currency', 'Currency must be specified.');
         Assert::lazy()
