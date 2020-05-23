@@ -6,7 +6,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Oroshi\Money;
+namespace Oroshi\Money\Service;
 
 use Daikon\DataStructure\TypedMapInterface;
 use Daikon\DataStructure\TypedMapTrait;

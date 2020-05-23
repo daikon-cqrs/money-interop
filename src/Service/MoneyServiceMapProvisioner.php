@@ -6,7 +6,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Oroshi\Money;
+namespace Oroshi\Money\Service;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;

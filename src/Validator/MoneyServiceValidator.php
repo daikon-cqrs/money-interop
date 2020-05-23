@@ -12,8 +12,8 @@ use Assert\Assert;
 use Oroshi\Core\Middleware\ActionHandler;
 use Oroshi\Core\Middleware\Action\ValidatorInterface;
 use Oroshi\Core\Middleware\Action\ValidatorTrait;
-use Oroshi\Money\MoneyServiceInterface;
-use Oroshi\Money\MoneyServiceMap;
+use Oroshi\Money\Service\MoneyServiceInterface;
+use Oroshi\Money\Service\MoneyServiceMap;
 
 final class MoneyServiceValidator implements ValidatorInterface
 {
