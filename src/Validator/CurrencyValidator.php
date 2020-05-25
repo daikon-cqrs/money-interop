@@ -74,6 +74,7 @@ final class CurrencyValidator implements ValidatorInterface
         Assert::that($input)
             ->string('Must be a string.')
             ->notBlank('Must not be blank.')
+            //@todo assert case insensitive
             ->inArray($this->options, 'Not acceptable.');
 
         return Currency::fromNative($input);

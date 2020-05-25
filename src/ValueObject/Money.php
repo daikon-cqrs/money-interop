@@ -10,6 +10,7 @@ namespace Oroshi\Money\ValueObject;
 
 use Assert\Assertion;
 use Daikon\ValueObject\ValueObjectInterface;
+use InvalidArgumentException;
 use Money\Currency as PhpCurrency;
 use Money\Money as PhpMoney;
 
@@ -20,7 +21,7 @@ final class Money implements ValueObjectInterface
     public const ROUND_HALF_UP = PhpMoney::ROUND_HALF_UP;
     public const ROUND_HALF_DOWN = PhpMoney::ROUND_HALF_DOWN;
 
-    private PhpMoney $value;
+    private PhpMoney $money;
 
     /** @param self $comparator */
     public function equals($comparator): bool
@@ -31,19 +32,19 @@ final class Money implements ValueObjectInterface
 
     public function getAmount(): string
     {
-        return $this->value->getAmount();
+        return $this->money->getAmount();
     }
 
     public function getCurrency(): Currency
     {
-        return Currency::fromNative((string)$this->value->getCurrency());
+        return Currency::fromNative($this->money->getCurrency()->getCode());
     }
 
     /** @param float|int|string $multiplier */
     public function multiply($multiplier, int $roundingMode = self::ROUND_HALF_UP): self
     {
         Assertion::numeric($multiplier, 'Multipler must be numeric.');
-        $multiplied = $this->value->multiply($multiplier, $roundingMode);
+        $multiplied = $this->money->multiply($multiplier, $roundingMode);
         return new self($multiplied);
     }
 
@@ -51,82 +52,84 @@ final class Money implements ValueObjectInterface
     public function divide($divisor, int $roundingMode = self::ROUND_HALF_UP): self
     {
         Assertion::numeric($divisor, 'Divider must be numeric.');
-        $divided = $this->value->divide($divisor, $roundingMode);
+        $divided = $this->money->divide($divisor, $roundingMode);
         return new self($divided);
     }
 
-    public function add(Money $money): self
+    public function add(self $money): self
     {
-        $added = $this->value->add($money->toBaseMoney());
+        $added = $this->money->add($money->unwrap());
         return new self($added);
     }
 
-    public function subtract(Money $money): self
+    public function subtract(self $money): self
     {
-        $subtracted = $this->value->subtract($money->toBaseMoney());
+        $subtracted = $this->money->subtract($money->unwrap());
         return new self($subtracted);
     }
 
     public function isZero(): bool
     {
-        return $this->value->isZero();
+        return $this->money->isZero();
     }
 
     public function isPositive(): bool
     {
-        return $this->value->isPositive();
+        return $this->money->isPositive();
     }
 
     public function isNegative(): bool
     {
-        return $this->value->isNegative();
+        return $this->money->isNegative();
     }
 
-    public function isLessThanOrEqual(Money $money): bool
+    public function isLessThanOrEqual(self $money): bool
     {
-        return $this->value->lessThanOrEqual($money->toBaseMoney());
+        return $this->money->lessThanOrEqual($money->unwrap());
     }
 
-    public function isGreaterThanOrEqual(Money $money): bool
+    public function isGreaterThanOrEqual(self $money): bool
     {
-        return $this->value->greaterThanOrEqual($money->toBaseMoney());
+        return $this->money->greaterThanOrEqual($money->unwrap());
     }
 
-    /** @param array $value */
+    /** @param string $value */
     public static function fromNative($value): self
     {
-        Assertion::isArray($value, 'Trying to create Money VO from unsupported value type.');
-        Assertion::keyExists($value, 'amount');
-        Assertion::keyExists($value, 'currency');
+        Assertion::string($value, 'Must be a string.');
+        if (!preg_match('#^(?<amount>-?[0-9]+)(?<currency>[a-z]+[a-z0-9]*)$#i', $value, $matches)) {
+            throw new InvalidArgumentException("Invalid amount '$value'.");
+        }
 
-        return new self(new PhpMoney((string)$value['amount'], new PhpCurrency((string)$value['currency'])));
+        return new self(new PhpMoney(
+            $matches['amount'],
+            new PhpCurrency(strtoupper($matches['currency']))
+        ));
     }
 
-    public function toNative(): array
+    public function unwrap(): PhpMoney
     {
-        return [
-            'amount' => (string)$this->value->getAmount(),
-            'currency' => (string)$this->value->getCurrency()
-        ];
+        return $this->money;
     }
 
-    public function toBaseMoney(): PhpMoney
+    /** @param string|Currency $currency */
+    public static function zero($currency): self
     {
-        return $this->value;
+        return self::fromNative('0'.(string)$currency);
     }
 
-    public static function zero(Currency $currency): self
+    public function toNative(): string
     {
-        return new self(new PhpMoney(0, new PhpCurrency((string)$currency)));
+        return $this->money->getAmount().$this->money->getCurrency()->getCode();
     }
 
     public function __toString(): string
     {
-        return $this->value->getAmount().' '.$this->value->getCurrency();
+        return $this->toNative();
     }
 
-    private function __construct(PhpMoney $value)
+    private function __construct(PhpMoney $money)
     {
-        $this->value = $value;
+        $this->money = $money;
     }
 }

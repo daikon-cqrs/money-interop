@@ -14,7 +14,7 @@ use Money\Currency as PhpCurrency;
 
 final class Currency implements ValueObjectInterface
 {
-    private PhpCurrency $value;
+    private PhpCurrency $currency;
 
     /** @param self $comparator */
     public function equals($comparator): bool
@@ -23,30 +23,32 @@ final class Currency implements ValueObjectInterface
         return $this->toNative() === $comparator->toNative();
     }
 
-    public function getCurrency(): string
+    public function getCode(): string
     {
-        return $this->value->getCode();
+        return $this->currency->getCode();
     }
 
     /** @param string $value */
     public static function fromNative($value): self
     {
-        Assertion::string($value);
-        return new self(new PhpCurrency($value));
+        Assertion::string($value, 'Must be a string.');
+        Assertion::regex($value, '#^[a-z]+[a-z0-9]*$#i', "Invalid currency '$value'.");
+
+        return new self(new PhpCurrency(strtoupper($value)));
     }
 
     public function toNative(): string
     {
-        return $this->value->getCode();
+        return $this->currency->getCode();
     }
 
     public function __toString(): string
     {
-        return $this->value->getCode();
+        return $this->toNative();
     }
 
-    private function __construct(PhpCurrency $value)
+    private function __construct(PhpCurrency $currency)
     {
-        $this->value = $value;
+        $this->currency = $currency;
     }
 }
