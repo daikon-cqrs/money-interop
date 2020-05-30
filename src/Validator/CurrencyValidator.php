@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 /**
- * This file is part of the oroshi/money-interop project.
+ * This file is part of the daikon/money-interop project.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Oroshi\Money\Validator;
+namespace Daikon\Money\Validator;
 
 use Assert\Assert;
-use Oroshi\Core\Middleware\ActionHandler;
-use Oroshi\Core\Middleware\Action\ValidatorInterface;
-use Oroshi\Core\Middleware\Action\ValidatorTrait;
-use Oroshi\Money\ValueObject\Currency;
+use Daikon\Boot\Middleware\Action\ValidatorInterface;
+use Daikon\Boot\Middleware\Action\ValidatorTrait;
+use Daikon\Boot\Middleware\ActionHandler;
+use Daikon\Money\ValueObject\Currency;
 
 final class CurrencyValidator implements ValidatorInterface
 {

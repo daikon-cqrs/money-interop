@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 /**
- * This file is part of the oroshi/money-interop project.
+ * This file is part of the daikon/money-interop project.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Oroshi\Money\ValueObject;
+namespace Daikon\Money\ValueObject;
 
 use Daikon\ValueObject\ValueObjectListInterface;
 use Daikon\ValueObject\ValueObjectListTrait;
 
 /**
- * @type Oroshi\Money\ValueObject\Money::fromNative
+ * @type Daikon\Money\ValueObject\Money::fromNative
  */
 final class Wallet implements ValueObjectListInterface
 {
@@ -29,7 +29,9 @@ final class Wallet implements ValueObjectListInterface
     public function getBalance(Currency $currency): Money
     {
         $index = $this->findByCurrency($currency);
-        return  $index !== false ? $this->get($index) : Money::zero($currency);
+        /** @var Money $balance */
+        $balance = $index !== false ? $this->get($index) : Money::zero($currency);
+        return $balance;
     }
 
     public function hasBalance(Money $amount): bool
