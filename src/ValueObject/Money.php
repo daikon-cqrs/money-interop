@@ -1,26 +1,15 @@
 <?php declare(strict_types=1);
-/**
- * This file is part of the daikon/money-interop project.
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace Daikon\Money\ValueObject;
 
 use Assert\Assertion;
-use Daikon\ValueObject\ValueObjectInterface;
+use Daikon\Money\ValueObject\MoneyInterface;
 use InvalidArgumentException;
 use Money\Currency as PhpCurrency;
 use Money\Money as PhpMoney;
 
-final class Money implements ValueObjectInterface
+final class Money implements MoneyInterface
 {
-    public const ROUND_UP = PhpMoney::ROUND_UP;
-    public const ROUND_DOWN = PhpMoney::ROUND_DOWN;
-    public const ROUND_HALF_UP = PhpMoney::ROUND_HALF_UP;
-    public const ROUND_HALF_DOWN = PhpMoney::ROUND_HALF_DOWN;
-
     private PhpMoney $money;
 
     /** @param self $comparator */
@@ -35,9 +24,9 @@ final class Money implements ValueObjectInterface
         return $this->money->getAmount();
     }
 
-    public function getCurrency(): Currency
+    public function getCurrency(): string
     {
-        return Currency::fromNative($this->money->getCurrency()->getCode());
+        return $this->money->getCurrency()->getCode();
     }
 
     /** @param float|int|string $multiplier */
@@ -56,15 +45,19 @@ final class Money implements ValueObjectInterface
         return new self($divided);
     }
 
-    public function add(self $money): self
+    public function add(MoneyInterface $money): self
     {
-        $added = $this->money->add($money->unwrap());
+        $added = $this->money->add(
+            self::asBaseMoney($money->getAmount(), $money->getCurrency())
+        );
         return new self($added);
     }
 
-    public function subtract(self $money): self
+    public function subtract(MoneyInterface $money): self
     {
-        $subtracted = $this->money->subtract($money->unwrap());
+        $subtracted = $this->money->subtract(
+            self::asBaseMoney($money->getAmount(), $money->getCurrency())
+        );
         return new self($subtracted);
     }
 
@@ -83,49 +76,53 @@ final class Money implements ValueObjectInterface
         return $this->money->isNegative();
     }
 
-    public function isLessThanOrEqual(self $money): bool
+    public function isLessThanOrEqual(MoneyInterface $money): bool
     {
-        return $this->money->lessThanOrEqual($money->unwrap());
+        return $this->money->lessThanOrEqual(
+            self::asBaseMoney($money->getAmount(), $money->getCurrency())
+        );
     }
 
-    public function isGreaterThanOrEqual(self $money): bool
+    public function isGreaterThanOrEqual(MoneyInterface $money): bool
     {
-        return $this->money->greaterThanOrEqual($money->unwrap());
+        return $this->money->greaterThanOrEqual(
+            self::asBaseMoney($money->getAmount(), $money->getCurrency())
+        );
     }
 
     /** @param string $value */
     public static function fromNative($value): self
     {
         Assertion::string($value, 'Must be a string.');
-        if (!preg_match('#^(?<amount>-?[0-9]+)(?<currency>[a-z]+[a-z0-9]*)$#i', $value, $matches)) {
-            throw new InvalidArgumentException("Invalid amount '$value'.");
+        if (!preg_match('#^(?<amount>-?[0-9]+)(?<currency>[a-z][a-z0-9]*)$#i', $value, $matches)) {
+            throw new InvalidArgumentException('Invalid amount.');
         }
 
-        return new self(new PhpMoney(
-            $matches['amount'],
-            new PhpCurrency(strtoupper($matches['currency']))
-        ));
+        $amount = $matches['amount'];
+        $currency = strtoupper($matches['currency']);
+
+        return new self(self::asBaseMoney($amount, $currency));
     }
 
-    public function unwrap(): PhpMoney
+    public static function zero($currency = null): self
     {
-        return $this->money;
-    }
-
-    /** @param string|Currency $currency */
-    public static function zero($currency): self
-    {
+        Assertion::regex($currency, '#^[a-z][a-z0-9]*$#i', 'Invalid currency.');
         return self::fromNative('0'.(string)$currency);
     }
 
     public function toNative(): string
     {
-        return $this->money->getAmount().$this->money->getCurrency()->getCode();
+        return $this->getAmount().$this->getCurrency();
     }
 
     public function __toString(): string
     {
         return $this->toNative();
+    }
+
+    private static function asBaseMoney(string $amount, string $currency): PhpMoney
+    {
+        return new PhpMoney($amount, new PhpCurrency($currency));
     }
 
     private function __construct(PhpMoney $money)
