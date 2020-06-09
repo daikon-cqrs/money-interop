@@ -21,7 +21,7 @@ final class MoneyServiceMapProvisioner implements ProvisionerInterface
         ConfigProviderInterface $configProvider,
         ServiceDefinitionInterface $serviceDefinition
     ): void {
-        $serviceConfigs = $configProvider->get('payments', []);
+        $serviceConfigs = $configProvider->get('payments.services', []);
         $factory = function (ConnectorMap $connectorMap) use ($injector, $serviceConfigs): MoneyServiceMap {
             $services = [];
             foreach ($serviceConfigs as $serviceName => $serviceConfig) {
@@ -29,7 +29,8 @@ final class MoneyServiceMapProvisioner implements ProvisionerInterface
                 $services[$serviceName] = $injector->define(
                     $serviceClass,
                     [
-                        ':connector' => $connectorMap->get($serviceConfig['connector']),
+                        ':connector' =>
+                            $serviceConfig['connector'] ? $connectorMap->get($serviceConfig['connector']) : null,
                         ':settings' => $serviceConfig['settings'] ?? []
                     ]
                 )->make($serviceClass);

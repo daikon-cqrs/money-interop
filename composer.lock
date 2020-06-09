@@ -290,12 +290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "4c0766ddb5d9564c01e5297ef7f741058f23ad2c"
+                "reference": "dd24f61f49b9668334d0fe5aa210d50d303dd0b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/4c0766ddb5d9564c01e5297ef7f741058f23ad2c",
-                "reference": "4c0766ddb5d9564c01e5297ef7f741058f23ad2c",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/dd24f61f49b9668334d0fe5aa210d50d303dd0b9",
+                "reference": "dd24f61f49b9668334d0fe5aa210d50d303dd0b9",
                 "shasum": ""
             },
             "require": {
@@ -326,7 +326,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2020-06-01T16:42:42+00:00"
+            "time": "2020-06-05T18:37:10+00:00"
         },
         {
             "name": "daikon/couchdb-adapter",
@@ -378,12 +378,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "7d7b782079afd1c6d78827597ecf9ae6ff2b6e2e"
+                "reference": "c03be5cdabe02a941ed573b0a1f74073a05f9c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/7d7b782079afd1c6d78827597ecf9ae6ff2b6e2e",
-                "reference": "7d7b782079afd1c6d78827597ecf9ae6ff2b6e2e",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/c03be5cdabe02a941ed573b0a1f74073a05f9c8e",
+                "reference": "c03be5cdabe02a941ed573b0a1f74073a05f9c8e",
                 "shasum": ""
             },
             "require": {
@@ -420,7 +420,7 @@
                 "map",
                 "vector"
             ],
-            "time": "2020-05-28T02:04:18+00:00"
+            "time": "2020-06-05T18:39:42+00:00"
         },
         {
             "name": "daikon/dbal",
@@ -657,12 +657,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/interop.git",
-                "reference": "9601b4722d7c24a14b073375f3c9092b70bb0b2b"
+                "reference": "4efb65c3993d172649791a3f5e94227f258efab5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/9601b4722d7c24a14b073375f3c9092b70bb0b2b",
-                "reference": "9601b4722d7c24a14b073375f3c9092b70bb0b2b",
+                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/4efb65c3993d172649791a3f5e94227f258efab5",
+                "reference": "4efb65c3993d172649791a3f5e94227f258efab5",
                 "shasum": ""
             },
             "require": {
@@ -686,7 +686,7 @@
             ],
             "description": "Interoperability code used across Daikon-CQRS components.",
             "homepage": "https://github.com/daikon-cqrs/interop",
-            "time": "2020-05-27T22:29:11+00:00"
+            "time": "2020-06-05T17:12:58+00:00"
         },
         {
             "name": "daikon/message-bus",
@@ -739,12 +739,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/metadata.git",
-                "reference": "b9b7aae13faa3b61ec39d9603e8ff5c94a6a666d"
+                "reference": "740508780f33e3611724b3291af9b23bc2d7c6e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/metadata/zipball/b9b7aae13faa3b61ec39d9603e8ff5c94a6a666d",
-                "reference": "b9b7aae13faa3b61ec39d9603e8ff5c94a6a666d",
+                "url": "https://api.github.com/repos/daikon-cqrs/metadata/zipball/740508780f33e3611724b3291af9b23bc2d7c6e8",
+                "reference": "740508780f33e3611724b3291af9b23bc2d7c6e8",
                 "shasum": ""
             },
             "require": {
@@ -774,7 +774,7 @@
                 "enricher",
                 "metadata"
             ],
-            "time": "2020-05-28T02:11:27+00:00"
+            "time": "2020-06-05T20:58:41+00:00"
         },
         {
             "name": "daikon/rabbitmq3-adapter",
@@ -2172,16 +2172,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.7.3",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "4acfd6a4b33a509d8c88f50e5222f734b6aeebae"
+                "reference": "b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/4acfd6a4b33a509d8c88f50e5222f734b6aeebae",
-                "reference": "4acfd6a4b33a509d8c88f50e5222f734b6aeebae",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3",
+                "reference": "b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3",
                 "shasum": ""
             },
             "require": {
@@ -2223,7 +2223,17 @@
                 "php",
                 "type"
             ],
-            "time": "2020-03-21T18:07:53+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-07T10:40:07+00:00"
         },
         {
             "name": "phpseclib/phpseclib",

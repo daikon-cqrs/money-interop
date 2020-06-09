@@ -1,4 +1,10 @@
 <?php declare(strict_types=1);
+/**
+ * This file is part of the daikon-cqrs/money-interop project.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Daikon\Money\ValueObject;
 
@@ -94,19 +100,16 @@ final class Money implements MoneyInterface
     public static function fromNative($value): self
     {
         Assertion::string($value, 'Must be a string.');
-        if (!preg_match('#^(?<amount>-?[0-9]+)(?<currency>[a-z][a-z0-9]*)$#i', $value, $matches)) {
+        if (!preg_match('#^(?<amount>-?[0-9]+)(?<currency>[A-Z][A-Z0-9]*)$#', $value, $matches)) {
             throw new InvalidArgumentException('Invalid amount.');
         }
 
-        $amount = $matches['amount'];
-        $currency = strtoupper($matches['currency']);
-
-        return new self(self::asBaseMoney($amount, $currency));
+        return new self(self::asBaseMoney($matches['amount'], $matches['currency']));
     }
 
     public static function zero($currency = null): self
     {
-        Assertion::regex($currency, '#^[a-z][a-z0-9]*$#i', 'Invalid currency.');
+        Assertion::regex($currency, '#^[A-Z][A-Z0-9]*$#', 'Invalid currency.');
         return self::fromNative('0'.(string)$currency);
     }
 
