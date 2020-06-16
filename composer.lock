@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71a24ed16b4a8502d6c120d463111eae",
+    "content-hash": "fb9ee9e6a4a045c2edef3a1a433b346e",
     "packages": [
         {
             "name": "aura/router",
@@ -6793,7 +6793,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "daikon/boot": 20
+        "daikon/boot": 20,
+        "daikon/data-structure": 20,
+        "daikon/interop": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

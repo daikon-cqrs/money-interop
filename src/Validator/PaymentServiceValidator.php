@@ -8,10 +8,10 @@
 
 namespace Daikon\Money\Validator;
 
-use Assert\Assert;
 use Daikon\Boot\Middleware\Action\ValidatorInterface;
 use Daikon\Boot\Middleware\Action\ValidatorTrait;
 use Daikon\Boot\Middleware\ActionHandler;
+use Daikon\Interop\Assert;
 use Daikon\Money\Service\PaymentServiceInterface;
 use Daikon\Money\Service\PaymentServiceMap;
 

@@ -9,8 +9,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.4",
-        "beberlei/assert": "^v3.0",
         "daikon/boot": "master@dev",
+        "daikon/data-structure": "master@dev",
+        "daikon/interop": "master@dev",
         "moneyphp/money": "^3.2"
     },
     "require-dev": {

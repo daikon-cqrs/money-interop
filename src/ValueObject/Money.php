@@ -8,9 +8,9 @@
 
 namespace Daikon\Money\ValueObject;
 
-use Assert\Assertion;
+use Daikon\Interop\Assertion;
+use Daikon\Interop\InvalidArgumentException;
 use Daikon\Money\ValueObject\MoneyInterface;
-use InvalidArgumentException;
 use Money\Currency as PhpCurrency;
 use Money\Money as PhpMoney;
 
@@ -100,7 +100,7 @@ final class Money implements MoneyInterface
     public static function fromNative($value): self
     {
         Assertion::string($value, 'Must be a string.');
-        if (!preg_match('#^(?<amount>-?[0-9]+)(?<currency>[A-Z][A-Z0-9]*)$#', $value, $matches)) {
+        if (!preg_match('#^(?<amount>-?\d+)\s?(?<currency>[a-z][a-z0-9]*)$#i', $value, $matches)) {
             throw new InvalidArgumentException('Invalid amount.');
         }
 
@@ -109,7 +109,7 @@ final class Money implements MoneyInterface
 
     public static function zero($currency = null): self
     {
-        Assertion::regex($currency, '#^[A-Z][A-Z0-9]*$#', 'Invalid currency.');
+        Assertion::regex($currency, '#^[a-z][a-z0-9]*$#i', 'Invalid currency.');
         return self::fromNative('0'.(string)$currency);
     }
 
