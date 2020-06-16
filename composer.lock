@@ -175,17 +175,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/async-job.git",
-                "reference": "c922fe8ec1208851ea69d78fa7ddd041289fd5e4"
+                "reference": "cd8f3e184fdc67a355a117c11533a16f2615fd6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/c922fe8ec1208851ea69d78fa7ddd041289fd5e4",
-                "reference": "c922fe8ec1208851ea69d78fa7ddd041289fd5e4",
+                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/cd8f3e184fdc67a355a117c11533a16f2615fd6c",
+                "reference": "cd8f3e184fdc67a355a117c11533a16f2615fd6c",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^v3.0",
                 "daikon/data-structure": "master@dev",
+                "daikon/interop": "master@dev",
                 "daikon/message-bus": "master@dev",
                 "daikon/metadata": "master@dev",
                 "php": "^7.4"
@@ -213,9 +213,10 @@
                 "background",
                 "delayed",
                 "job",
+                "strategy",
                 "worker"
             ],
-            "time": "2020-05-28T04:08:45+00:00"
+            "time": "2020-06-11T19:48:19+00:00"
         },
         {
             "name": "daikon/boot",
@@ -223,23 +224,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/boot.git",
-                "reference": "b10ed109d8bf3437edfa2a938cb1311b3e1b68d0"
+                "reference": "4ada848ed8bcfc51e68f596a823fd6eed469bd6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/b10ed109d8bf3437edfa2a938cb1311b3e1b68d0",
-                "reference": "b10ed109d8bf3437edfa2a938cb1311b3e1b68d0",
+                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/4ada848ed8bcfc51e68f596a823fd6eed469bd6c",
+                "reference": "4ada848ed8bcfc51e68f596a823fd6eed469bd6c",
                 "shasum": ""
             },
             "require": {
                 "aura/router": "^3.0",
-                "beberlei/assert": "^v3.0",
                 "daikon/config": "master@dev",
                 "daikon/couchdb-adapter": "master@dev",
                 "daikon/elasticsearch7-adapter": "master@dev",
                 "daikon/entity": "master@dev",
                 "daikon/event-sourcing": "master@dev",
                 "daikon/flysystem-adapter": "master@dev",
+                "daikon/interop": "master@dev",
                 "daikon/metadata": "master@dev",
                 "daikon/rabbitmq3-adapter": "master@dev",
                 "daikon/value-object": "master@dev",
@@ -278,11 +279,12 @@
             "homepage": "https://github.com/daikon-cqrs/boot",
             "keywords": [
                 "bootstrap",
+                "cqrs",
                 "daikon-cqrs",
                 "event-sourcing",
                 "middleware"
             ],
-            "time": "2020-05-30T18:13:36+00:00"
+            "time": "2020-06-13T19:18:03+00:00"
         },
         {
             "name": "daikon/config",
@@ -290,16 +292,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "dd24f61f49b9668334d0fe5aa210d50d303dd0b9"
+                "reference": "677a57b621f210dbbca390adda2ec80689b6d11a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/dd24f61f49b9668334d0fe5aa210d50d303dd0b9",
-                "reference": "dd24f61f49b9668334d0fe5aa210d50d303dd0b9",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/677a57b621f210dbbca390adda2ec80689b6d11a",
+                "reference": "677a57b621f210dbbca390adda2ec80689b6d11a",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^3.0",
                 "daikon/interop": "master@dev",
                 "php": "^7.4",
                 "symfony/finder": "^5.0",
@@ -326,7 +327,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2020-06-05T18:37:10+00:00"
+            "time": "2020-06-13T19:05:35+00:00"
         },
         {
             "name": "daikon/couchdb-adapter",
@@ -334,12 +335,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "ff397c29179780f53bba70299715d36084a80b0f"
+                "reference": "42d7b52671f082dc66250b9abeea0815625e7226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/ff397c29179780f53bba70299715d36084a80b0f",
-                "reference": "ff397c29179780f53bba70299715d36084a80b0f",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/42d7b52671f082dc66250b9abeea0815625e7226",
+                "reference": "42d7b52671f082dc66250b9abeea0815625e7226",
                 "shasum": ""
             },
             "require": {
@@ -370,7 +371,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2020-05-28T16:01:19+00:00"
+            "time": "2020-06-11T21:22:36+00:00"
         },
         {
             "name": "daikon/data-structure",
@@ -378,16 +379,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "c03be5cdabe02a941ed573b0a1f74073a05f9c8e"
+                "reference": "6cac1cf4aeb2bac1874704dd54d7a77a0a5efd79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/c03be5cdabe02a941ed573b0a1f74073a05f9c8e",
-                "reference": "c03be5cdabe02a941ed573b0a1f74073a05f9c8e",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/6cac1cf4aeb2bac1874704dd54d7a77a0a5efd79",
+                "reference": "6cac1cf4aeb2bac1874704dd54d7a77a0a5efd79",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^3.0",
                 "daikon/interop": "master@dev",
                 "php": "^7.4",
                 "php-ds/php-ds": "^1.2"
@@ -420,7 +420,7 @@
                 "map",
                 "vector"
             ],
-            "time": "2020-06-05T18:39:42+00:00"
+            "time": "2020-06-10T23:58:47+00:00"
         },
         {
             "name": "daikon/dbal",
@@ -428,16 +428,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "86c80a215c393dff9b1253df275c62e5ea8d002f"
+                "reference": "6fdd2cc086cba6a96cd63e889dfcd14685214c7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/86c80a215c393dff9b1253df275c62e5ea8d002f",
-                "reference": "86c80a215c393dff9b1253df275c62e5ea8d002f",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/6fdd2cc086cba6a96cd63e889dfcd14685214c7e",
+                "reference": "6fdd2cc086cba6a96cd63e889dfcd14685214c7e",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^3.0",
                 "daikon/data-structure": "master@dev",
                 "daikon/event-sourcing": "master@dev",
                 "daikon/interop": "master@dev",
@@ -467,7 +466,7 @@
                 "dbal",
                 "immutable"
             ],
-            "time": "2020-05-28T15:21:17+00:00"
+            "time": "2020-06-11T20:42:48+00:00"
         },
         {
             "name": "daikon/elasticsearch7-adapter",
@@ -475,16 +474,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/elasticsearch7-adapter.git",
-                "reference": "68531b3e22545f0e5ae3cb79489731cd5fa542e9"
+                "reference": "1ba9cb148be4dc0a3fcd0399b623e51ce298b105"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch7-adapter/zipball/68531b3e22545f0e5ae3cb79489731cd5fa542e9",
-                "reference": "68531b3e22545f0e5ae3cb79489731cd5fa542e9",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch7-adapter/zipball/1ba9cb148be4dc0a3fcd0399b623e51ce298b105",
+                "reference": "1ba9cb148be4dc0a3fcd0399b623e51ce298b105",
                 "shasum": ""
             },
             "require": {
                 "daikon/dbal": "master@dev",
+                "daikon/interop": "master@dev",
                 "daikon/metadata": "master@dev",
                 "daikon/read-model": "master@dev",
                 "elasticsearch/elasticsearch": "^7.0",
@@ -513,7 +513,7 @@
                 "elasticsearch",
                 "projection"
             ],
-            "time": "2020-05-28T16:26:50+00:00"
+            "time": "2020-06-11T21:24:54+00:00"
         },
         {
             "name": "daikon/entity",
@@ -521,16 +521,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/entity.git",
-                "reference": "dba9898bdf099b0581f96bce1f05feef9898889b"
+                "reference": "50b90edd359d193500dfaa13b483d4ea46c25290"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/dba9898bdf099b0581f96bce1f05feef9898889b",
-                "reference": "dba9898bdf099b0581f96bce1f05feef9898889b",
+                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/50b90edd359d193500dfaa13b483d4ea46c25290",
+                "reference": "50b90edd359d193500dfaa13b483d4ea46c25290",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^3.0",
                 "daikon/data-structure": "master@dev",
                 "daikon/interop": "master@dev",
                 "daikon/value-object": "master@dev",
@@ -559,7 +558,7 @@
                 "attribute",
                 "entity"
             ],
-            "time": "2020-05-28T03:47:40+00:00"
+            "time": "2020-06-11T17:11:14+00:00"
         },
         {
             "name": "daikon/event-sourcing",
@@ -567,16 +566,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "977f82b7bea9d9cd143ee934745b5acf98f250f7"
+                "reference": "f4c7d5c5fdae775f7e49329faf39707b216eb27c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/977f82b7bea9d9cd143ee934745b5acf98f250f7",
-                "reference": "977f82b7bea9d9cd143ee934745b5acf98f250f7",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/f4c7d5c5fdae775f7e49329faf39707b216eb27c",
+                "reference": "f4c7d5c5fdae775f7e49329faf39707b216eb27c",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^3.0",
                 "daikon/interop": "master@dev",
                 "daikon/message-bus": "master@dev",
                 "daikon/metadata": "master@dev",
@@ -606,7 +604,7 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2020-05-28T04:23:24+00:00"
+            "time": "2020-06-11T19:32:15+00:00"
         },
         {
             "name": "daikon/flysystem-adapter",
@@ -614,12 +612,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/flysystem-adapter.git",
-                "reference": "72443407305435f65b98550dfc41d42172522b74"
+                "reference": "b7682e1f2542cc7fb9d7d13168cbc5e03ab9b03e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/flysystem-adapter/zipball/72443407305435f65b98550dfc41d42172522b74",
-                "reference": "72443407305435f65b98550dfc41d42172522b74",
+                "url": "https://api.github.com/repos/daikon-cqrs/flysystem-adapter/zipball/b7682e1f2542cc7fb9d7d13168cbc5e03ab9b03e",
+                "reference": "b7682e1f2542cc7fb9d7d13168cbc5e03ab9b03e",
                 "shasum": ""
             },
             "require": {
@@ -649,7 +647,7 @@
                 "Flysystem",
                 "adapter"
             ],
-            "time": "2020-05-28T16:35:53+00:00"
+            "time": "2020-06-11T20:58:25+00:00"
         },
         {
             "name": "daikon/interop",
@@ -657,15 +655,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/interop.git",
-                "reference": "4efb65c3993d172649791a3f5e94227f258efab5"
+                "reference": "12496dfaccf079ce09c1484149c3cb7a3ed0df83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/4efb65c3993d172649791a3f5e94227f258efab5",
-                "reference": "4efb65c3993d172649791a3f5e94227f258efab5",
+                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/12496dfaccf079ce09c1484149c3cb7a3ed0df83",
+                "reference": "12496dfaccf079ce09c1484149c3cb7a3ed0df83",
                 "shasum": ""
             },
             "require": {
+                "beberlei/assert": "^v3.0",
                 "php": "^7.4"
             },
             "require-dev": {
@@ -686,7 +685,7 @@
             ],
             "description": "Interoperability code used across Daikon-CQRS components.",
             "homepage": "https://github.com/daikon-cqrs/interop",
-            "time": "2020-06-05T17:12:58+00:00"
+            "time": "2020-06-13T18:56:24+00:00"
         },
         {
             "name": "daikon/message-bus",
@@ -694,12 +693,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "42a4036e4694b27058a48d995af2c4ef733f57b8"
+                "reference": "b7559b8186587b55ee4a06c9823828a748377758"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/42a4036e4694b27058a48d995af2c4ef733f57b8",
-                "reference": "42a4036e4694b27058a48d995af2c4ef733f57b8",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/b7559b8186587b55ee4a06c9823828a748377758",
+                "reference": "b7559b8186587b55ee4a06c9823828a748377758",
                 "shasum": ""
             },
             "require": {
@@ -731,7 +730,7 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2020-05-28T03:24:00+00:00"
+            "time": "2020-06-11T00:12:09+00:00"
         },
         {
             "name": "daikon/metadata",
@@ -739,12 +738,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/metadata.git",
-                "reference": "740508780f33e3611724b3291af9b23bc2d7c6e8"
+                "reference": "f92bfd6efc96eee04641c8c384c98e7da0f723de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/metadata/zipball/740508780f33e3611724b3291af9b23bc2d7c6e8",
-                "reference": "740508780f33e3611724b3291af9b23bc2d7c6e8",
+                "url": "https://api.github.com/repos/daikon-cqrs/metadata/zipball/f92bfd6efc96eee04641c8c384c98e7da0f723de",
+                "reference": "f92bfd6efc96eee04641c8c384c98e7da0f723de",
                 "shasum": ""
             },
             "require": {
@@ -774,7 +773,7 @@
                 "enricher",
                 "metadata"
             ],
-            "time": "2020-06-05T20:58:41+00:00"
+            "time": "2020-06-11T00:04:02+00:00"
         },
         {
             "name": "daikon/rabbitmq3-adapter",
@@ -782,16 +781,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/rabbitmq3-adapter.git",
-                "reference": "e3e0fd7817cfed8d8c4048d7f776209699f48b51"
+                "reference": "24cce735579a2f7640700516cd7909f5f7ae5f77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/e3e0fd7817cfed8d8c4048d7f776209699f48b51",
-                "reference": "e3e0fd7817cfed8d8c4048d7f776209699f48b51",
+                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/24cce735579a2f7640700516cd7909f5f7ae5f77",
+                "reference": "24cce735579a2f7640700516cd7909f5f7ae5f77",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^v3.0",
                 "daikon/async-job": "master@dev",
                 "daikon/dbal": "master@dev",
                 "daikon/interop": "master@dev",
@@ -822,7 +820,7 @@
                 "adapter",
                 "rabbitmq3"
             ],
-            "time": "2020-05-28T17:01:42+00:00"
+            "time": "2020-06-11T21:32:13+00:00"
         },
         {
             "name": "daikon/read-model",
@@ -830,16 +828,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "1edf792d82df41539245dc8d96c2c0d9068585f1"
+                "reference": "0bb627baf08cb22589664e44cf13a5481ade3fc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/1edf792d82df41539245dc8d96c2c0d9068585f1",
-                "reference": "1edf792d82df41539245dc8d96c2c0d9068585f1",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/0bb627baf08cb22589664e44cf13a5481ade3fc6",
+                "reference": "0bb627baf08cb22589664e44cf13a5481ade3fc6",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^3.0",
                 "daikon/data-structure": "master@dev",
                 "daikon/event-sourcing": "master@dev",
                 "daikon/interop": "master@dev",
@@ -871,7 +868,7 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2020-05-28T04:36:13+00:00"
+            "time": "2020-06-11T20:24:20+00:00"
         },
         {
             "name": "daikon/value-object",
@@ -879,20 +876,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/value-object.git",
-                "reference": "bfd0148d12535c81f6794157e43ff50ec560e8d2"
+                "reference": "680f776b8fca7df49c2df2f56300e21ec099e34d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/value-object/zipball/bfd0148d12535c81f6794157e43ff50ec560e8d2",
-                "reference": "bfd0148d12535c81f6794157e43ff50ec560e8d2",
+                "url": "https://api.github.com/repos/daikon-cqrs/value-object/zipball/680f776b8fca7df49c2df2f56300e21ec099e34d",
+                "reference": "680f776b8fca7df49c2df2f56300e21ec099e34d",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^3.0",
                 "daikon/data-structure": "master@dev",
                 "daikon/interop": "master@dev",
                 "php": "^7.4",
-                "ramsey/uuid": "^3.8 || ^4.0"
+                "ramsey/uuid": "^4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.0",
@@ -915,7 +911,7 @@
             "keywords": [
                 "value-object"
             ],
-            "time": "2020-06-03T21:58:16+00:00"
+            "time": "2020-06-11T00:08:27+00:00"
         },
         {
             "name": "danielstjules/stringy",
@@ -1191,16 +1187,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.7.2",
+            "version": "2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "17d0d3f266c8f925ebd035cd36f83cf802b47d4a"
+                "reference": "5d5fe9bb3d656b514d455645b3addc5f7ba7714d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/17d0d3f266c8f925ebd035cd36f83cf802b47d4a",
-                "reference": "17d0d3f266c8f925ebd035cd36f83cf802b47d4a",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/5d5fe9bb3d656b514d455645b3addc5f7ba7714d",
+                "reference": "5d5fe9bb3d656b514d455645b3addc5f7ba7714d",
                 "shasum": ""
             },
             "require": {
@@ -1248,7 +1244,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2020-05-05T12:28:07+00:00"
+            "time": "2020-06-14T09:00:00+00:00"
         },
         {
             "name": "franzl/whoops-middleware",
@@ -3000,16 +2996,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.1.0",
+            "version": "v5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "00bed125812716d09b163f0727ef33bb49bf3448"
+                "reference": "34ac555a3627e324b660e318daa07572e1140123"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/00bed125812716d09b163f0727ef33bb49bf3448",
-                "reference": "00bed125812716d09b163f0727ef33bb49bf3448",
+                "url": "https://api.github.com/repos/symfony/console/zipball/34ac555a3627e324b660e318daa07572e1140123",
+                "reference": "34ac555a3627e324b660e318daa07572e1140123",
                 "shasum": ""
             },
             "require": {
@@ -3089,7 +3085,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-30T20:35:19+00:00"
+            "time": "2020-06-15T12:59:21+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -3153,7 +3149,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.1.0",
+            "version": "v5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -3877,16 +3873,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.1.0",
+            "version": "v5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "90c2a5103f07feb19069379f3abdcdbacc7753a9"
+                "reference": "ac70459db781108db7c6d8981dd31ce0e29e3298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/90c2a5103f07feb19069379f3abdcdbacc7753a9",
-                "reference": "90c2a5103f07feb19069379f3abdcdbacc7753a9",
+                "url": "https://api.github.com/repos/symfony/string/zipball/ac70459db781108db7c6d8981dd31ce0e29e3298",
+                "reference": "ac70459db781108db7c6d8981dd31ce0e29e3298",
                 "shasum": ""
             },
             "require": {
@@ -3958,11 +3954,11 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-20T17:43:50+00:00"
+            "time": "2020-06-11T12:16:36+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.1.0",
+            "version": "v5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -5220,16 +5216,16 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "4ac5b3e13df14829daa60a2eb4fdd2f2b7d33cf4"
+                "reference": "eba15e538f2bb3fe018b7bbb47d2fe32d404bfd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/4ac5b3e13df14829daa60a2eb4fdd2f2b7d33cf4",
-                "reference": "4ac5b3e13df14829daa60a2eb4fdd2f2b7d33cf4",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/eba15e538f2bb3fe018b7bbb47d2fe32d404bfd2",
+                "reference": "eba15e538f2bb3fe018b7bbb47d2fe32d404bfd2",
                 "shasum": ""
             },
             "require": {
@@ -5272,20 +5268,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-04-18T05:02:12+00:00"
+            "time": "2020-06-15T12:54:35+00:00"
         },
         {
             "name": "phpunit/php-invoker",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-invoker.git",
-                "reference": "7579d5a1ba7f3ac11c80004d205877911315ae7a"
+                "reference": "62f696ad0d140e0e513e69eaafdebb674d622b4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-invoker/zipball/7579d5a1ba7f3ac11c80004d205877911315ae7a",
-                "reference": "7579d5a1ba7f3ac11c80004d205877911315ae7a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-invoker/zipball/62f696ad0d140e0e513e69eaafdebb674d622b4c",
+                "reference": "62f696ad0d140e0e513e69eaafdebb674d622b4c",
                 "shasum": ""
             },
             "require": {
@@ -5325,24 +5321,33 @@
             "keywords": [
                 "process"
             ],
-            "time": "2020-02-07T06:06:11+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T13:10:07+00:00"
         },
         {
             "name": "phpunit/php-text-template",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-text-template.git",
-                "reference": "526dc996cc0ebdfa428cd2dfccd79b7b53fee346"
+                "reference": "0c69cbf965d5317ba33f24a352539f354a25db09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-text-template/zipball/526dc996cc0ebdfa428cd2dfccd79b7b53fee346",
-                "reference": "526dc996cc0ebdfa428cd2dfccd79b7b53fee346",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-text-template/zipball/0c69cbf965d5317ba33f24a352539f354a25db09",
+                "reference": "0c69cbf965d5317ba33f24a352539f354a25db09",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
             },
             "type": "library",
             "extra": {
@@ -5371,7 +5376,13 @@
             "keywords": [
                 "template"
             ],
-            "time": "2020-02-01T07:43:44+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T12:52:43+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -5430,16 +5441,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "cdc0db5aed8fbfaf475fbd95bfd7bab83c7a779c"
+                "reference": "e61c593e9734b47ef462340c24fca8d6a57da14e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/cdc0db5aed8fbfaf475fbd95bfd7bab83c7a779c",
-                "reference": "cdc0db5aed8fbfaf475fbd95bfd7bab83c7a779c",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/e61c593e9734b47ef462340c24fca8d6a57da14e",
+                "reference": "e61c593e9734b47ef462340c24fca8d6a57da14e",
                 "shasum": ""
             },
             "require": {
@@ -5481,7 +5492,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-06T09:56:31+00:00"
+            "time": "2020-06-16T07:00:44+00:00"
         },
         {
             "name": "phpunit/phpunit",
@@ -5583,16 +5594,16 @@
         },
         {
             "name": "sebastian/code-unit",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/code-unit.git",
-                "reference": "ac958085bc19fcd1d36425c781ef4cbb5b06e2a5"
+                "reference": "d650ef9b1fece15ed4d6eaed6e6b469b7b81183a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/code-unit/zipball/ac958085bc19fcd1d36425c781ef4cbb5b06e2a5",
-                "reference": "ac958085bc19fcd1d36425c781ef4cbb5b06e2a5",
+                "url": "https://api.github.com/repos/sebastianbergmann/code-unit/zipball/d650ef9b1fece15ed4d6eaed6e6b469b7b81183a",
+                "reference": "d650ef9b1fece15ed4d6eaed6e6b469b7b81183a",
                 "shasum": ""
             },
             "require": {
@@ -5631,20 +5642,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-04-30T05:58:10+00:00"
+            "time": "2020-06-15T13:11:26+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/code-unit-reverse-lookup.git",
-                "reference": "5b5dbe0044085ac41df47e79d34911a15b96d82e"
+                "reference": "c771130f0e8669104a4320b7101a81c2cc2963ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/5b5dbe0044085ac41df47e79d34911a15b96d82e",
-                "reference": "5b5dbe0044085ac41df47e79d34911a15b96d82e",
+                "url": "https://api.github.com/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/c771130f0e8669104a4320b7101a81c2cc2963ef",
+                "reference": "c771130f0e8669104a4320b7101a81c2cc2963ef",
                 "shasum": ""
             },
             "require": {
@@ -5676,20 +5687,26 @@
             ],
             "description": "Looks up which function or method a line of code belongs to",
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
-            "time": "2020-02-07T06:20:13+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T12:56:39+00:00"
         },
         {
             "name": "sebastian/comparator",
-            "version": "4.0.0",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "85b3435da967696ed618ff745f32be3ff4a2b8e8"
+                "reference": "266d85ef789da8c41f06af4093c43e9798af2784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/85b3435da967696ed618ff745f32be3ff4a2b8e8",
-                "reference": "85b3435da967696ed618ff745f32be3ff4a2b8e8",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/266d85ef789da8c41f06af4093c43e9798af2784",
+                "reference": "266d85ef789da8c41f06af4093c43e9798af2784",
                 "shasum": ""
             },
             "require": {
@@ -5740,7 +5757,13 @@
                 "compare",
                 "equality"
             ],
-            "time": "2020-02-07T06:08:51+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T15:04:48+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -5806,16 +5829,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "5.1.0",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "c753f04d68cd489b6973cf9b4e505e191af3b05c"
+                "reference": "16eb0fa43e29c33d7f2117ed23072e26fc5ab34e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/c753f04d68cd489b6973cf9b4e505e191af3b05c",
-                "reference": "c753f04d68cd489b6973cf9b4e505e191af3b05c",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/16eb0fa43e29c33d7f2117ed23072e26fc5ab34e",
+                "reference": "16eb0fa43e29c33d7f2117ed23072e26fc5ab34e",
                 "shasum": ""
             },
             "require": {
@@ -5861,20 +5884,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-04-14T13:36:52+00:00"
+            "time": "2020-06-15T13:00:01+00:00"
         },
         {
             "name": "sebastian/exporter",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "80c26562e964016538f832f305b2286e1ec29566"
+                "reference": "d12fbca85da932d01d941b59e4b71a0d559db091"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/80c26562e964016538f832f305b2286e1ec29566",
-                "reference": "80c26562e964016538f832f305b2286e1ec29566",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/d12fbca85da932d01d941b59e4b71a0d559db091",
+                "reference": "d12fbca85da932d01d941b59e4b71a0d559db091",
                 "shasum": ""
             },
             "require": {
@@ -5928,7 +5951,13 @@
                 "export",
                 "exporter"
             ],
-            "time": "2020-02-07T06:10:52+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T13:12:44+00:00"
         },
         {
             "name": "sebastian/finder-facade",
@@ -6032,16 +6061,16 @@
         },
         {
             "name": "sebastian/object-enumerator",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/object-enumerator.git",
-                "reference": "e67516b175550abad905dc952f43285957ef4363"
+                "reference": "15f319d67c49fc55ebcdbffb3377433125588455"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/e67516b175550abad905dc952f43285957ef4363",
-                "reference": "e67516b175550abad905dc952f43285957ef4363",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/15f319d67c49fc55ebcdbffb3377433125588455",
+                "reference": "15f319d67c49fc55ebcdbffb3377433125588455",
                 "shasum": ""
             },
             "require": {
@@ -6075,20 +6104,26 @@
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
-            "time": "2020-02-07T06:12:23+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T13:15:25+00:00"
         },
         {
             "name": "sebastian/object-reflector",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/object-reflector.git",
-                "reference": "f4fd0835cabb0d4a6546d9fe291e5740037aa1e7"
+                "reference": "14e04b3c25b821cc0702d4837803fe497680b062"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/object-reflector/zipball/f4fd0835cabb0d4a6546d9fe291e5740037aa1e7",
-                "reference": "f4fd0835cabb0d4a6546d9fe291e5740037aa1e7",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-reflector/zipball/14e04b3c25b821cc0702d4837803fe497680b062",
+                "reference": "14e04b3c25b821cc0702d4837803fe497680b062",
                 "shasum": ""
             },
             "require": {
@@ -6120,7 +6155,13 @@
             ],
             "description": "Allows reflection of object attributes, including inherited and non-public ones",
             "homepage": "https://github.com/sebastianbergmann/object-reflector/",
-            "time": "2020-02-07T06:19:40+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T13:08:02+00:00"
         },
         {
             "name": "sebastian/phpcpd",
@@ -6175,16 +6216,16 @@
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "cdd86616411fc3062368b720b0425de10bd3d579"
+                "reference": "a32789e5f0157c10cf216ce6c5136db12a12b847"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/cdd86616411fc3062368b720b0425de10bd3d579",
-                "reference": "cdd86616411fc3062368b720b0425de10bd3d579",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/a32789e5f0157c10cf216ce6c5136db12a12b847",
+                "reference": "a32789e5f0157c10cf216ce6c5136db12a12b847",
                 "shasum": ""
             },
             "require": {
@@ -6224,20 +6265,26 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2020-02-07T06:18:20+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T13:06:44+00:00"
         },
         {
             "name": "sebastian/resource-operations",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/resource-operations.git",
-                "reference": "8c98bf0dfa1f9256d0468b9803a1e1df31b6fa98"
+                "reference": "71421c1745788de4facae1b79af923650bd3ec15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/resource-operations/zipball/8c98bf0dfa1f9256d0468b9803a1e1df31b6fa98",
-                "reference": "8c98bf0dfa1f9256d0468b9803a1e1df31b6fa98",
+                "url": "https://api.github.com/repos/sebastianbergmann/resource-operations/zipball/71421c1745788de4facae1b79af923650bd3ec15",
+                "reference": "71421c1745788de4facae1b79af923650bd3ec15",
                 "shasum": ""
             },
             "require": {
@@ -6269,7 +6316,13 @@
             ],
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
-            "time": "2020-02-07T06:13:02+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-15T13:17:14+00:00"
         },
         {
             "name": "sebastian/type",
@@ -6596,16 +6649,16 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.8.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "ab2cb0b3b559010b75981b1bdce728da3ee90ad6"
+                "reference": "9dc4f203e36f2b486149058bade43c851dd97451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/ab2cb0b3b559010b75981b1bdce728da3ee90ad6",
-                "reference": "ab2cb0b3b559010b75981b1bdce728da3ee90ad6",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/9dc4f203e36f2b486149058bade43c851dd97451",
+                "reference": "9dc4f203e36f2b486149058bade43c851dd97451",
                 "shasum": ""
             },
             "require": {
@@ -6613,6 +6666,7 @@
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
+                "phpstan/phpstan": "<0.12.20",
                 "vimeo/psalm": "<3.9.1"
             },
             "require-dev": {
@@ -6640,7 +6694,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2020-04-18T12:12:48+00:00"
+            "time": "2020-06-16T10:16:42+00:00"
         },
         {
             "name": "webmozart/glob",

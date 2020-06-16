@@ -8,6 +8,6 @@
 
 namespace Daikon\Money\Service;
 
-interface MoneyServiceInterface
+interface PaymentServiceInterface
 {
 }

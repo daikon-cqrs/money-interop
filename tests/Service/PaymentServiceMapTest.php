@@ -8,16 +8,16 @@
 
  namespace Daikon\Tests\Money\Service;
 
-use Daikon\Money\Service\MoneyServiceInterface;
-use Daikon\Money\Service\MoneyServiceMap;
+use Daikon\Money\Service\PaymentServiceInterface;
+use Daikon\Money\Service\PaymentServiceMap;
 use PHPUnit\Framework\TestCase;
 
-final class MoneyServiceMapTest extends TestCase
+final class PaymentServiceMapTest extends TestCase
 {
     public function testConstruct(): void
     {
-        $service = $this->createMock(MoneyServiceInterface::class);
-        $unwrappedMap = (new MoneyServiceMap(['a' => $service]))->unwrap();
+        $service = $this->createMock(PaymentServiceInterface::class);
+        $unwrappedMap = (new PaymentServiceMap(['a' => $service]))->unwrap();
         $this->assertNotSame($service, $unwrappedMap['a']);
         $this->assertEquals($service, $unwrappedMap['a']);
     }

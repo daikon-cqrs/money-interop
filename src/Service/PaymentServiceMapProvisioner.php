@@ -14,7 +14,7 @@ use Daikon\Boot\Service\ServiceDefinitionInterface;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\Dbal\Connector\ConnectorMap;
 
-final class MoneyServiceMapProvisioner implements ProvisionerInterface
+final class PaymentServiceMapProvisioner implements ProvisionerInterface
 {
     public function provision(
         Injector $injector,
@@ -22,7 +22,7 @@ final class MoneyServiceMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceConfigs = $configProvider->get('payments.services', []);
-        $factory = function (ConnectorMap $connectorMap) use ($injector, $serviceConfigs): MoneyServiceMap {
+        $factory = function (ConnectorMap $connectorMap) use ($injector, $serviceConfigs): PaymentServiceMap {
             $services = [];
             foreach ($serviceConfigs as $serviceName => $serviceConfig) {
                 $serviceClass = $serviceConfig['class'];
@@ -35,11 +35,11 @@ final class MoneyServiceMapProvisioner implements ProvisionerInterface
                     ]
                 )->make($serviceClass);
             }
-            return new MoneyServiceMap($services);
+            return new PaymentServiceMap($services);
         };
 
         $injector
-            ->share(MoneyServiceMap::class)
-            ->delegate(MoneyServiceMap::class, $factory);
+            ->share(PaymentServiceMap::class)
+            ->delegate(PaymentServiceMap::class, $factory);
     }
 }

@@ -12,14 +12,14 @@ use Assert\Assert;
 use Daikon\Boot\Middleware\Action\ValidatorInterface;
 use Daikon\Boot\Middleware\Action\ValidatorTrait;
 use Daikon\Boot\Middleware\ActionHandler;
-use Daikon\Money\Service\MoneyServiceInterface;
-use Daikon\Money\Service\MoneyServiceMap;
+use Daikon\Money\Service\PaymentServiceInterface;
+use Daikon\Money\Service\PaymentServiceMap;
 
-final class MoneyServiceValidator implements ValidatorInterface
+final class PaymentServiceValidator implements ValidatorInterface
 {
     use ValidatorTrait;
 
-    private MoneyServiceMap $moneyServiceMap;
+    private PaymentServiceMap $paymentServiceMap;
 
     private string $input;
 
@@ -46,7 +46,7 @@ final class MoneyServiceValidator implements ValidatorInterface
      * @param mixed $default
      */
     public function __construct(
-        MoneyServiceMap $moneyServiceMap,
+        PaymentServiceMap $paymentServiceMap,
         string $input,
         $export = null,
         $default = null,
@@ -57,7 +57,7 @@ final class MoneyServiceValidator implements ValidatorInterface
         string $exportErrorCode = ActionHandler::ATTR_ERROR_CODE,
         string $exportErrorSeverity = ActionHandler::ATTR_ERROR_SEVERITY
     ) {
-        $this->moneyServiceMap = $moneyServiceMap;
+        $this->paymentServiceMap = $paymentServiceMap;
         $this->input = $input;
         $this->export = $export;
         $this->default = $default;
@@ -70,15 +70,15 @@ final class MoneyServiceValidator implements ValidatorInterface
     }
 
     /** @param mixed $input */
-    private function validate(string $name, $input): MoneyServiceInterface
+    private function validate(string $name, $input): PaymentServiceInterface
     {
         Assert::that($input)
             ->string('Must be a string.')
             ->notBlank('Must not be empty.')
-            ->satisfy([$this->moneyServiceMap, 'has'], 'Unknown service.');
+            ->satisfy([$this->paymentServiceMap, 'has'], 'Unknown service.');
 
-        /** @var MoneyServiceInterface $service  */
-        $service = $this->moneyServiceMap->get($input);
+        /** @var PaymentServiceInterface $service  */
+        $service = $this->paymentServiceMap->get($input);
 
         return $service;
     }

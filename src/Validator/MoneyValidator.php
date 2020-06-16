@@ -8,17 +8,20 @@
 
 namespace Daikon\Money\Validator;
 
-use Assert\Assertion;
 use Daikon\Boot\Middleware\ActionHandler;
 use Daikon\Boot\Middleware\Action\ValidatorInterface;
 use Daikon\Boot\Middleware\Action\ValidatorTrait;
-use Daikon\Money\ValueObject\Money;
+use Daikon\Interop\Assertion;
+use Daikon\Interop\InvalidArgumentException;
+use Daikon\Money\Service\MoneyService;
 use Daikon\Money\ValueObject\MoneyInterface;
-use InvalidArgumentException;
+use Money\Exception\ParserException;
 
 final class MoneyValidator implements ValidatorInterface
 {
     use ValidatorTrait;
+
+    private MoneyService $moneyService;
 
     private string $input;
 
@@ -33,8 +36,6 @@ final class MoneyValidator implements ValidatorInterface
     private ?string $min;
     
     private ?string $max;
-
-    private string $impl;
 
     private int $severity;
 
@@ -51,26 +52,26 @@ final class MoneyValidator implements ValidatorInterface
      * @param mixed $default
      */
     public function __construct(
+        MoneyService $moneyService,
         string $input,
         $export = null,
         $default = null,
         bool $required = true,
         string $min = null,
         string $max = null,
-        string $impl = Money::class,
         int $severity = self::SEVERITY_ERROR,
         string $payload = ActionHandler::ATTR_PAYLOAD,
         string $exportErrors = ActionHandler::ATTR_ERRORS,
         string $exportErrorCode = ActionHandler::ATTR_ERROR_CODE,
         string $exportErrorSeverity = ActionHandler::ATTR_ERROR_SEVERITY
     ) {
+        $this->moneyService = $moneyService;
         $this->input = $input;
         $this->export = $export;
         $this->default = $default;
         $this->required = $required;
         $this->min = $min;
         $this->max = $max;
-        $this->impl = $impl;
         $this->severity = $severity;
         $this->payload = $payload;
         $this->exportErrors = $exportErrors;
@@ -81,15 +82,19 @@ final class MoneyValidator implements ValidatorInterface
     /** @param mixed $input */
     private function validate(string $name, $input): MoneyInterface
     {
-        Assertion::implementsInterface($this->impl, MoneyInterface::class);
+        Assertion::string($input, 'Must be a string.');
 
-        $money = $this->impl::fromNative($input);
+        try {
+            $money = $this->moneyService->parse($input);
+        } catch (ParserException $error) {
+            throw new InvalidArgumentException('Invalid amount.');
+        }
 
-        if ($this->min && !$money->isGreaterThanOrEqual($this->impl::fromNative($this->min))) {
+        if ($this->min && !$money->isGreaterThanOrEqual($this->moneyService->parse($this->min))) {
             throw new InvalidArgumentException("Amount must be at least $this->min.");
         }
 
-        if ($this->max && !$money->isLessThanOrEqual($this->impl::fromNative($this->max))) {
+        if ($this->max && !$money->isLessThanOrEqual($this->moneyService->parse($this->max))) {
             throw new InvalidArgumentException("Amount must be at most $this->max.");
         }
 

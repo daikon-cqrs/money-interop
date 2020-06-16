@@ -10,10 +10,10 @@ namespace Daikon\Money\Service;
 
 use Daikon\DataStructure\TypedMap;
 
-final class MoneyServiceMap extends TypedMap
+final class PaymentServiceMap extends TypedMap
 {
     public function __construct(iterable $services = [])
     {
-        $this->init($services, [MoneyServiceInterface::class]);
+        $this->init($services, [PaymentServiceInterface::class]);
     }
 }
