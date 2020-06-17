@@ -55,10 +55,12 @@ final class MoneyService
 
     public function convert(MoneyInterface $money, string $currency): MoneyInterface
     {
-        $converted = $this->converter->convert(
-            new PhpMoney($money->getAmount(), new PhpCurrency($money->getCurrency())),
-            new PhpCurrency($currency)
-        );
-        return $this->moneyType::fromNative($converted->getAmount().$converted->getCurrency());
+        if ($money->getCurrency() !== $currency) {
+            $money = $this->converter->convert(
+                new PhpMoney($money->getAmount(), new PhpCurrency($money->getCurrency())),
+                new PhpCurrency($currency)
+            );
+        }
+        return $this->moneyType::fromNative($money->getAmount().$money->getCurrency());
     }
 }

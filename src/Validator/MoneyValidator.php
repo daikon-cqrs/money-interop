@@ -90,7 +90,7 @@ final class MoneyValidator implements ValidatorInterface
 
         try {
             $money = $this->moneyService->parse($input);
-            if ($this->convert && $money->getCurrency() !== $this->convert) {
+            if ($this->convert) {
                 $money = $this->moneyService->convert($money, $this->convert);
             }
         } catch (ParserException $error) {
