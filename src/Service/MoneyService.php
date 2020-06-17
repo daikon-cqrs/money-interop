@@ -17,7 +17,7 @@ use Money\Money as PhpMoney;
 use Money\MoneyFormatter;
 use Money\MoneyParser;
 
-final class MoneyService
+final class MoneyService implements MoneyServiceInterface
 {
     private MoneyParser $parser;
 

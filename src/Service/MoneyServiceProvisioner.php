@@ -30,14 +30,15 @@ final class MoneyServiceProvisioner implements ProvisionerInterface
         ConfigProviderInterface $configProvider,
         ServiceDefinitionInterface $serviceDefinition
     ): void {
+        $serviceClass = $serviceDefinition->getServiceClass();
         $settings = $serviceDefinition->getSettings();
 
-        $factory = function (Injector $injector) use ($settings): object {
+        $factory = function (Injector $injector) use ($settings, $serviceClass): object {
             $currencies = $this->buildCurrencies($injector, $settings['currencies'] ?? []);
             $parsers = $this->buildParsers($injector, $currencies, $settings['parsers'] ?? []);
             $formatters = $this->buildFormatters($injector, $settings['formatters'] ?? []);
             $exchanges = $this->buildExchanges($injector, $settings['exchanges'] ?? []);
-            return new MoneyService(
+            return new $serviceClass(
                 $parsers,
                 new Converter($currencies, $exchanges),
                 $formatters,
@@ -46,8 +47,9 @@ final class MoneyServiceProvisioner implements ProvisionerInterface
         };
 
         $injector
-            ->share(MoneyService::class)
-            ->delegate(MoneyService::class, $factory);
+            ->delegate($serviceClass, $factory)
+            ->share($serviceClass)
+            ->alias(MoneyServiceInterface::class, $serviceClass);
     }
 
     private function buildCurrencies(Injector $injector, array $currencyConfigs): AggregateCurrencies
