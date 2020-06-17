@@ -33,6 +33,8 @@ final class MoneyValidator implements ValidatorInterface
 
     private bool $required;
     
+    private ?string $convert;
+
     private ?string $min;
     
     private ?string $max;
@@ -57,6 +59,7 @@ final class MoneyValidator implements ValidatorInterface
         $export = null,
         $default = null,
         bool $required = true,
+        string $convert = null,
         string $min = null,
         string $max = null,
         int $severity = self::SEVERITY_ERROR,
@@ -70,6 +73,7 @@ final class MoneyValidator implements ValidatorInterface
         $this->export = $export;
         $this->default = $default;
         $this->required = $required;
+        $this->convert = $convert;
         $this->min = $min;
         $this->max = $max;
         $this->severity = $severity;
@@ -86,6 +90,9 @@ final class MoneyValidator implements ValidatorInterface
 
         try {
             $money = $this->moneyService->parse($input);
+            if ($this->convert && $money->getCurrency() !== $this->convert) {
+                $money = $this->moneyService->convert($money, $this->convert);
+            }
         } catch (ParserException $error) {
             throw new InvalidArgumentException('Invalid amount.');
         }
