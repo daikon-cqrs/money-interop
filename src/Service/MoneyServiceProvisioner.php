@@ -56,7 +56,6 @@ final class MoneyServiceProvisioner implements ProvisionerInterface
     {
         $currencies = [];
         foreach ($currencyConfigs as $currencyConfig) {
-            //@todo support plain array of currencies
             $currencies[] = $injector->make($currencyConfig['class'], $currencyConfig['settings'] ?? []);
         }
         return new AggregateCurrencies($currencies);
