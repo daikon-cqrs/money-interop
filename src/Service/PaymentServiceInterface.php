@@ -10,4 +10,7 @@ namespace Daikon\Money\Service;
 
 interface PaymentServiceInterface
 {
+    public function canRequest(): bool;
+
+    public function canSend(): bool;
 }

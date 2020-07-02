@@ -224,12 +224,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/boot.git",
-                "reference": "23e2537db626512b5e79c5baf12c084df0acd0e7"
+                "reference": "b3bed443570942abfd3a152a339a051de6f80c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/23e2537db626512b5e79c5baf12c084df0acd0e7",
-                "reference": "23e2537db626512b5e79c5baf12c084df0acd0e7",
+                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/b3bed443570942abfd3a152a339a051de6f80c4d",
+                "reference": "b3bed443570942abfd3a152a339a051de6f80c4d",
                 "shasum": ""
             },
             "require": {
@@ -284,7 +284,7 @@
                 "event-sourcing",
                 "middleware"
             ],
-            "time": "2020-06-30T21:51:03+00:00"
+            "time": "2020-07-02T17:35:51+00:00"
         },
         {
             "name": "daikon/config",
@@ -379,12 +379,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "6cac1cf4aeb2bac1874704dd54d7a77a0a5efd79"
+                "reference": "80b4dd31356e88f19505931b95ff2f2d5dd3aa0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/6cac1cf4aeb2bac1874704dd54d7a77a0a5efd79",
-                "reference": "6cac1cf4aeb2bac1874704dd54d7a77a0a5efd79",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/80b4dd31356e88f19505931b95ff2f2d5dd3aa0b",
+                "reference": "80b4dd31356e88f19505931b95ff2f2d5dd3aa0b",
                 "shasum": ""
             },
             "require": {
@@ -420,7 +420,7 @@
                 "map",
                 "vector"
             ],
-            "time": "2020-06-10T23:58:47+00:00"
+            "time": "2020-07-02T17:55:03+00:00"
         },
         {
             "name": "daikon/dbal",
@@ -474,12 +474,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/elasticsearch7-adapter.git",
-                "reference": "1ba9cb148be4dc0a3fcd0399b623e51ce298b105"
+                "reference": "bcf9eaa496e018f265ef7ca48b9a7ee2ab8ebf5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch7-adapter/zipball/1ba9cb148be4dc0a3fcd0399b623e51ce298b105",
-                "reference": "1ba9cb148be4dc0a3fcd0399b623e51ce298b105",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch7-adapter/zipball/bcf9eaa496e018f265ef7ca48b9a7ee2ab8ebf5a",
+                "reference": "bcf9eaa496e018f265ef7ca48b9a7ee2ab8ebf5a",
                 "shasum": ""
             },
             "require": {
@@ -513,7 +513,7 @@
                 "elasticsearch",
                 "projection"
             ],
-            "time": "2020-06-11T21:24:54+00:00"
+            "time": "2020-07-02T19:47:58+00:00"
         },
         {
             "name": "daikon/entity",
@@ -1252,19 +1252,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MrHash/whoops-middleware.git",
-                "reference": "a03b867ee8d7ffe5baf444ede164190db47d0047"
+                "reference": "b9aa1d026af988e7e78f5e033e023f954e36810a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MrHash/whoops-middleware/zipball/a03b867ee8d7ffe5baf444ede164190db47d0047",
-                "reference": "a03b867ee8d7ffe5baf444ede164190db47d0047",
+                "url": "https://api.github.com/repos/MrHash/whoops-middleware/zipball/b9aa1d026af988e7e78f5e033e023f954e36810a",
+                "reference": "b9aa1d026af988e7e78f5e033e023f954e36810a",
                 "shasum": ""
             },
             "require": {
                 "filp/whoops": "^1.1 || ^2.0",
-                "middlewares/utils": "^3.0"
+                "middlewares/utils": "^2.0 || ^3.0",
+                "php": "^7.1"
             },
             "require-dev": {
+                "laminas/laminas-diactoros": "^1.1.0 || ^2.0",
                 "phpunit/phpunit": "^7.0",
                 "psr/http-server-middleware": "^1.0"
             },
@@ -1289,7 +1291,7 @@
             "support": {
                 "source": "https://github.com/MrHash/whoops-middleware/tree/master"
             },
-            "time": "2020-06-30T21:05:18+00:00"
+            "time": "2020-07-01T22:54:37+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4659,16 +4661,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.5.0",
+            "version": "v4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "53c2753d756f5adb586dca79c2ec0e2654dd9463"
+                "reference": "c346bbfafe2ff60680258b631afb730d186ed864"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/53c2753d756f5adb586dca79c2ec0e2654dd9463",
-                "reference": "53c2753d756f5adb586dca79c2ec0e2654dd9463",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c346bbfafe2ff60680258b631afb730d186ed864",
+                "reference": "c346bbfafe2ff60680258b631afb730d186ed864",
                 "shasum": ""
             },
             "require": {
@@ -4707,7 +4709,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-06-03T07:24:19+00:00"
+            "time": "2020-07-02T17:12:47+00:00"
         },
         {
             "name": "ocramius/package-versions",

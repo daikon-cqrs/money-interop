@@ -16,4 +16,18 @@ final class PaymentServiceMap extends TypedMap
     {
         $this->init($services, [PaymentServiceInterface::class]);
     }
+
+    public function enabledForRequest(): self
+    {
+        return $this->filter(
+            fn(string $key, PaymentServiceInterface $paymentService): bool => $paymentService->canRequest()
+        );
+    }
+
+    public function enabledForSend(): self
+    {
+        return $this->filter(
+            fn(string $key, PaymentServiceInterface $paymentService): bool => $paymentService->canSend()
+        );
+    }
 }
