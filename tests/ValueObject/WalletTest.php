@@ -10,7 +10,6 @@
 
 use Daikon\Money\ValueObject\Money;
 use Daikon\Money\ValueObject\Wallet;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 final class WalletTest extends TestCase

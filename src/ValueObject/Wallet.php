@@ -8,21 +8,16 @@
 
 namespace Daikon\Money\ValueObject;
 
-use Daikon\ValueObject\ValueObjectMapInterface;
-use Daikon\ValueObject\ValueObjectMapTrait;
+use Daikon\ValueObject\ValueObjectMap;
 
 /**
- * @type Daikon\Money\ValueObject\Money::fromNative
+ * @type(Daikon\Money\ValueObject\Money)
  */
-final class Wallet implements ValueObjectMapInterface
+final class Wallet extends ValueObjectMap
 {
-    use ValueObjectMapTrait {
-        isEmpty as traitIsEmpty;
-    }
-
     public function isEmpty(): bool
     {
-        return $this->traitIsEmpty() || $this->reduce(
+        return $this->reduce(
             fn(bool $carry, string $currency, MoneyInterface $money): bool => $carry && $money->isZero(),
             true
         );

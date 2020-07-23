@@ -8,8 +8,8 @@
 
  namespace Daikon\Tests\Money\ValueObject;
 
+use Daikon\Interop\InvalidArgumentException;
 use Daikon\Money\ValueObject\Money;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 final class MoneyTest extends TestCase
