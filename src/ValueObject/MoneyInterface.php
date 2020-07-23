@@ -25,9 +25,9 @@ interface MoneyInterface extends ValueObjectInterface
 
     public function getCurrency(): string;
 
-    public function add(self $money): self;
+    public function add(MoneyInterface $money): self;
 
-    public function subtract(self $money): self;
+    public function subtract(MoneyInterface $money): self;
 
     /** @param float|int|string $multiplier */
     public function multiply($multiplier, int $roundingMode = self::ROUND_HALF_UP): self;
@@ -41,7 +41,7 @@ interface MoneyInterface extends ValueObjectInterface
 
     public function isNegative(): bool;
 
-    public function isLessThanOrEqual(self $money): bool;
+    public function isLessThanOrEqual(MoneyInterface $money): bool;
 
-    public function isGreaterThanOrEqual(self $money): bool;
+    public function isGreaterThanOrEqual(MoneyInterface $money): bool;
 }
