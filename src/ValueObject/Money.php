@@ -100,7 +100,7 @@ final class Money implements MoneyInterface
     public static function fromNative($value): self
     {
         Assertion::string($value, 'Must be a string.');
-        if (!preg_match('#^(?<amount>-?\d+)\s?(?<currency>[a-z][a-z0-9]*)$#i', $value, $matches)) {
+        if (!preg_match('/^(?<amount>-?\d+)\s?(?<currency>[a-z][a-z0-9]*)$/i', $value, $matches)) {
             throw new InvalidArgumentException('Invalid amount.');
         }
 
@@ -109,7 +109,7 @@ final class Money implements MoneyInterface
 
     public static function zero($currency = null): self
     {
-        Assertion::regex($currency, '#^[a-z][a-z0-9]*$#i', 'Invalid currency.');
+        Assertion::regex($currency, '/^[a-z][a-z0-9]*$/i', 'Invalid currency.');
         return self::fromNative('0'.(string)$currency);
     }
 

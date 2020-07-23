@@ -53,12 +53,16 @@ final class MoneyService implements MoneyServiceInterface
         );
     }
 
-    public function convert(MoneyInterface $money, string $currency): MoneyInterface
-    {
+    public function convert(
+        MoneyInterface $money,
+        string $currency,
+        int $roundingMode = MoneyInterface::ROUND_HALF_UP
+    ): MoneyInterface {
         if ($money->getCurrency() !== $currency) {
             $money = $this->converter->convert(
                 new PhpMoney($money->getAmount(), new PhpCurrency($money->getCurrency())),
-                new PhpCurrency($currency)
+                new PhpCurrency($currency),
+                $roundingMode
             );
         }
         return $this->moneyType::fromNative($money->getAmount().$money->getCurrency());
