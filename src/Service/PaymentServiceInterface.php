@@ -8,9 +8,11 @@
 
 namespace Daikon\Money\Service;
 
+use Daikon\Money\ValueObject\MoneyInterface;
+
 interface PaymentServiceInterface
 {
-    public function canRequest(): bool;
+    public function canRequest(MoneyInterface $amount): bool;
 
-    public function canSend(): bool;
+    public function canSend(MoneyInterface $amount): bool;
 }

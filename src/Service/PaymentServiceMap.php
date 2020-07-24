@@ -9,6 +9,7 @@
 namespace Daikon\Money\Service;
 
 use Daikon\DataStructure\TypedMap;
+use Daikon\Money\ValueObject\MoneyInterface;
 
 final class PaymentServiceMap extends TypedMap
 {
@@ -17,17 +18,17 @@ final class PaymentServiceMap extends TypedMap
         $this->init($services, [PaymentServiceInterface::class]);
     }
 
-    public function enabledForRequest(): self
+    public function availableForRequest(MoneyInterface $amount): self
     {
         return $this->filter(
-            fn(string $key, PaymentServiceInterface $paymentService): bool => $paymentService->canRequest()
+            fn(string $key, PaymentServiceInterface $paymentService): bool => $paymentService->canRequest($amount)
         );
     }
 
-    public function enabledForSend(): self
+    public function availableForSend(MoneyInterface $amount): self
     {
         return $this->filter(
-            fn(string $key, PaymentServiceInterface $paymentService): bool => $paymentService->canSend()
+            fn(string $key, PaymentServiceInterface $paymentService): bool => $paymentService->canSend($amount)
         );
     }
 }

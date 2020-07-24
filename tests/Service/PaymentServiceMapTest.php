@@ -10,6 +10,7 @@
 
 use Daikon\Money\Service\PaymentServiceInterface;
 use Daikon\Money\Service\PaymentServiceMap;
+use Daikon\Money\ValueObject\Money;
 use PHPUnit\Framework\TestCase;
 
 final class PaymentServiceMapTest extends TestCase
@@ -24,27 +25,29 @@ final class PaymentServiceMapTest extends TestCase
 
     public function testEnabledForRequest(): void
     {
-        $disabledService = $this->createMock(PaymentServiceInterface::class);
-        $disabledService->expects($this->once())->method('canRequest')->willReturn(false);
-        $enabledService = $this->createMock(PaymentServiceInterface::class);
-        $enabledService->expects($this->once())->method('canRequest')->willReturn(true);
-        $filteredMap = (new PaymentServiceMap(['a' => $disabledService, 'b' => $enabledService]))->enabledForRequest();
+        $unavailable = $this->createMock(PaymentServiceInterface::class);
+        $unavailable->expects($this->once())->method('canRequest')->willReturn(false);
+        $availableService = $this->createMock(PaymentServiceInterface::class);
+        $availableService->expects($this->once())->method('canRequest')->willReturn(true);
+        $filteredMap = (new PaymentServiceMap(['a' => $unavailable, 'b' => $availableService]))
+            ->availableForRequest(Money::zero('X'));
         $unwrappedMap = $filteredMap->unwrap();
         $this->assertCount(1, $filteredMap);
-        $this->assertNotSame($enabledService, $unwrappedMap['b']);
-        $this->assertEquals($enabledService, $unwrappedMap['b']);
+        $this->assertNotSame($availableService, $unwrappedMap['b']);
+        $this->assertEquals($availableService, $unwrappedMap['b']);
     }
 
     public function testEnabledForSend(): void
     {
-        $disabledService = $this->createMock(PaymentServiceInterface::class);
-        $disabledService->expects($this->once())->method('canSend')->willReturn(false);
-        $enabledService = $this->createMock(PaymentServiceInterface::class);
-        $enabledService->expects($this->once())->method('canSend')->willReturn(true);
-        $filteredMap = (new PaymentServiceMap(['a' => $disabledService, 'b' => $enabledService]))->enabledForSend();
+        $unavailable = $this->createMock(PaymentServiceInterface::class);
+        $unavailable->expects($this->once())->method('canSend')->willReturn(false);
+        $availableService = $this->createMock(PaymentServiceInterface::class);
+        $availableService->expects($this->once())->method('canSend')->willReturn(true);
+        $filteredMap = (new PaymentServiceMap(['a' => $unavailable, 'b' => $availableService]))
+            ->availableForSend(Money::zero('X'));
         $unwrappedMap = $filteredMap->unwrap();
         $this->assertCount(1, $filteredMap);
-        $this->assertNotSame($enabledService, $unwrappedMap['b']);
-        $this->assertEquals($enabledService, $unwrappedMap['b']);
+        $this->assertNotSame($availableService, $unwrappedMap['b']);
+        $this->assertEquals($availableService, $unwrappedMap['b']);
     }
 }
