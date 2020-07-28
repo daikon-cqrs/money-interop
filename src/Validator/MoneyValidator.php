@@ -65,7 +65,7 @@ final class MoneyValidator implements ValidatorInterface
         int $severity = self::SEVERITY_ERROR,
         string $payload = ActionHandler::ATTR_PAYLOAD,
         string $exportErrors = ActionHandler::ATTR_ERRORS,
-        string $exportErrorCode = ActionHandler::ATTR_ERROR_CODE,
+        string $exportErrorCode = ActionHandler::ATTR_STATUS_CODE,
         string $exportErrorSeverity = ActionHandler::ATTR_ERROR_SEVERITY
     ) {
         $this->moneyService = $moneyService;
