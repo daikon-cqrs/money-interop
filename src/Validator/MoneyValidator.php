@@ -8,101 +8,53 @@
 
 namespace Daikon\Money\Validator;
 
-use Daikon\Boot\Middleware\ActionHandler;
-use Daikon\Boot\Middleware\Action\ValidatorInterface;
-use Daikon\Boot\Middleware\Action\ValidatorTrait;
 use Daikon\Interop\Assertion;
 use Daikon\Interop\InvalidArgumentException;
 use Daikon\Money\Service\MoneyService;
 use Daikon\Money\ValueObject\MoneyInterface;
+use Daikon\Validize\Validator\Validator;
 use Money\Exception\ParserException;
 
-final class MoneyValidator implements ValidatorInterface
+final class MoneyValidator extends Validator
 {
-    use ValidatorTrait;
-
     private MoneyService $moneyService;
 
-    private string $input;
-
-    /** @var null|bool|string */
-    private $export;
-
-    /** @var mixed */
-    private $default;
-
-    private bool $required;
-    
-    private ?string $convert;
-
-    private ?string $min;
-    
-    private ?string $max;
-
-    private int $severity;
-
-    private string $payload;
-
-    private string $exportErrors;
-
-    private string $exportErrorCode;
-
-    private string $exportErrorSeverity;
-
-    /**
-     * @param mixed $export
-     * @param mixed $default
-     */
-    public function __construct(
-        MoneyService $moneyService,
-        string $input,
-        $export = null,
-        $default = null,
-        bool $required = true,
-        string $convert = null,
-        string $min = null,
-        string $max = null,
-        int $severity = self::SEVERITY_ERROR,
-        string $payload = ActionHandler::ATTR_PAYLOAD,
-        string $exportErrors = ActionHandler::ATTR_ERRORS,
-        string $exportErrorCode = ActionHandler::ATTR_STATUS_CODE,
-        string $exportErrorSeverity = ActionHandler::ATTR_ERROR_SEVERITY
-    ) {
+    public function __construct(MoneyService $moneyService)
+    {
         $this->moneyService = $moneyService;
-        $this->input = $input;
-        $this->export = $export;
-        $this->default = $default;
-        $this->required = $required;
-        $this->convert = $convert;
-        $this->min = $min;
-        $this->max = $max;
-        $this->severity = $severity;
-        $this->payload = $payload;
-        $this->exportErrors = $exportErrors;
-        $this->exportErrorCode = $exportErrorCode;
-        $this->exportErrorSeverity = $exportErrorSeverity;
     }
 
     /** @param mixed $input */
-    private function validate(string $name, $input): MoneyInterface
+    protected function validate($input): MoneyInterface
     {
         Assertion::string($input, 'Must be a string.');
 
+        $settings = $this->getSettings();
+        $convert = $settings['convert'] ?? false;
+        $min = $settings['min'] ?? false;
+        $max = $settings['max'] ?? false;
+
         try {
             $money = $this->moneyService->parse($input);
-            if ($this->convert) {
-                $money = $this->moneyService->convert($money, $this->convert);
+            if ($convert) {
+                $money = $this->moneyService->convert($money, $convert);
             }
         } catch (ParserException $error) {
             throw new InvalidArgumentException('Invalid amount.');
         }
 
-        if ($this->min && !$money->isGreaterThanOrEqual($this->moneyService->parse($this->min))) {
-            throw new InvalidArgumentException("Amount must be at least $this->min.");
+        if ($min !== false) {
+            Assertion::true(
+                $money->isGreaterThanOrEqual($this->moneyService->parse($min)),
+                "Amount must be at least $min."
+            );
         }
 
-        if ($this->max && !$money->isLessThanOrEqual($this->moneyService->parse($this->max))) {
-            throw new InvalidArgumentException("Amount must be at most $this->max.");
+        if ($max !== false) {
+            Assertion::true(
+                $money->isLessThanOrEqual($this->moneyService->parse($max)),
+                "Amount must be at most $max."
+            );
         }
 
         return $money;
