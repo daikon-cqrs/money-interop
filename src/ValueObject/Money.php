@@ -35,7 +35,6 @@ final class Money implements MoneyInterface
         return $this->money->getCurrency()->getCode();
     }
 
-    /** @param float|int|string $multiplier */
     public function multiply($multiplier, int $roundingMode = self::ROUND_HALF_UP): self
     {
         Assertion::numeric($multiplier, 'Multipler must be numeric.');
@@ -43,12 +42,16 @@ final class Money implements MoneyInterface
         return new self($multiplied);
     }
 
-    /** @param float|int|string $divisor */
     public function divide($divisor, int $roundingMode = self::ROUND_HALF_UP): self
     {
         Assertion::numeric($divisor, 'Divider must be numeric.');
         $divided = $this->money->divide($divisor, $roundingMode);
         return new self($divided);
+    }
+
+    public function percentage($percentage, int $roundingMode = self::ROUND_HALF_UP): self
+    {
+        return $this->multiply($percentage)->divide(100, $roundingMode);
     }
 
     public function add(MoneyInterface $money): self

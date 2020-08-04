@@ -35,6 +35,9 @@ interface MoneyInterface extends ValueObjectInterface
     /** @param float|int|string $divisor */
     public function divide($divisor, int $roundingMode = self::ROUND_HALF_UP): self;
 
+    /** @param float|int|string $percentage */
+    public function percentage($percentage): self;
+
     public function isZero(): bool;
 
     public function isPositive(): bool;

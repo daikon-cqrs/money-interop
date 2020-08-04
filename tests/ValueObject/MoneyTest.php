@@ -10,6 +10,7 @@
 
 use Daikon\Interop\InvalidArgumentException;
 use Daikon\Money\ValueObject\Money;
+use Daikon\Money\ValueObject\MoneyInterface;
 use PHPUnit\Framework\TestCase;
 
 final class MoneyTest extends TestCase
@@ -45,5 +46,33 @@ final class MoneyTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         /** @psalm-suppress InvalidArgument */
         $this->assertFalse($money->equals('nan'));
+    }
+
+    public function testGetAmount(): void
+    {
+        $money = Money::fromNative('0SAT');
+        $this->assertSame('0', $money->getAmount());
+    }
+
+    public function testGetCurrency(): void
+    {
+        $money = Money::fromNative('0SAT');
+        $this->assertSame('SAT', $money->getCurrency());
+    }
+
+    public function testPercentage(): void
+    {
+        $money = Money::fromNative('0SAT');
+        $this->assertEquals('0SAT', (string)$money->percentage(0));
+        $this->assertSame('0SAT', (string)$money->percentage(10));
+        $this->assertSame('0', $money->percentage(10.12345, MoneyInterface::ROUND_UP)->getAmount());
+        $this->assertEquals('0SAT', (string)$money->percentage(100, MoneyInterface::ROUND_DOWN));
+
+        $money = Money::fromNative('100SAT');
+        $this->assertEquals('0SAT', (string)$money->percentage(0));
+        $this->assertSame('10SAT', (string)$money->percentage(10));
+        $this->assertSame('11', $money->percentage(10.12345, MoneyInterface::ROUND_UP)->getAmount());
+        $this->assertSame('10', $money->percentage(10.12345, MoneyInterface::ROUND_DOWN)->getAmount());
+        $this->assertEquals('100SAT', (string)$money->percentage(100, MoneyInterface::ROUND_DOWN));
     }
 }
