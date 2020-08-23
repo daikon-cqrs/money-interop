@@ -13,7 +13,7 @@ use Daikon\ValueObject\ValueObjectMap;
 /**
  * @type(Daikon\Money\ValueObject\Money)
  */
-final class Wallet extends ValueObjectMap
+class Wallet extends ValueObjectMap
 {
     public function isEmpty(): bool
     {
@@ -30,9 +30,9 @@ final class Wallet extends ValueObjectMap
         return $balance;
     }
 
-    public function hasBalance(string $currency): bool
+    public function hasBalance(MoneyInterface $amount): bool
     {
-        return $this->getBalance($currency)->isPositive();
+        return $this->getBalance($amount->getCurrency())->isGreaterThanOrEqual($amount);
     }
 
     public function credit(MoneyInterface $amount): self

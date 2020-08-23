@@ -8,6 +8,7 @@
 
  namespace Daikon\Tests\Money\ValueObject;
 
+use Daikon\Interop\InvalidArgumentException;
 use Daikon\Money\ValueObject\Money;
 use Daikon\Money\ValueObject\Wallet;
 use PHPUnit\Framework\TestCase;
@@ -75,8 +76,21 @@ final class WalletTest extends TestCase
         $this->assertNotSame($credit, $balance);
         $this->assertEquals($credit, $balance);
 
-        //@todo assertion on lowercase currency key
-        // $this->expectException(InvalidArgumentException::class);
-        // Wallet::fromNative(['sat' => '100SAT']);
+        $this->markTestSkipped('Assert wallet key matches money currency.');
+        $this->expectException(InvalidArgumentException::class);
+        Wallet::fromNative(['sat' => '100SAT']);
+    }
+
+    public function testHasBalance(): void
+    {
+        $amount = Money::fromNative('100SAT');
+        $wallet = Wallet::makeEmpty();
+        $this->assertFalse($wallet->hasBalance($amount));
+
+        $wallet = Wallet::fromNative(['SAT' => '100SAT']);
+        $this->assertTrue($wallet->hasBalance($amount));
+
+        $amount = Money::fromNative('100MSAT');
+        $this->assertFalse($wallet->hasBalance($amount));
     }
 }
