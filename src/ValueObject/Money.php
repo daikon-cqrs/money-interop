@@ -16,7 +16,7 @@ use Money\Money as PhpMoney;
 
 class Money implements MoneyInterface
 {
-    protected PhpMoney $money;
+    protected ?PhpMoney $money;
 
     /** @param static $comparator */
     public function equals($comparator): bool
@@ -27,17 +27,20 @@ class Money implements MoneyInterface
 
     public function getAmount(): string
     {
+        $this->assertNotEmpty();
         return $this->money->getAmount();
     }
 
     public function getCurrency(): string
     {
+        $this->assertNotEmpty();
         return $this->money->getCurrency()->getCode();
     }
 
     /** @return static */
     public function multiply($multiplier, int $roundingMode = self::ROUND_HALF_UP): self
     {
+        $this->assertNotEmpty();
         Assertion::numeric($multiplier, 'Multipler must be numeric.');
         $multiplied = $this->money->multiply($multiplier, $roundingMode);
         return new static($multiplied);
@@ -46,7 +49,9 @@ class Money implements MoneyInterface
     /** @return static */
     public function divide($divisor, int $roundingMode = self::ROUND_HALF_UP): self
     {
+        $this->assertNotEmpty();
         Assertion::numeric($divisor, 'Divider must be numeric.');
+        Assertion::notEq(0, $divisor, 'Divisor must not be zero.');
         $divided = $this->money->divide($divisor, $roundingMode);
         return new static($divided);
     }
@@ -54,12 +59,16 @@ class Money implements MoneyInterface
     /** @return static */
     public function percentage($percentage, int $roundingMode = self::ROUND_HALF_UP): self
     {
+        $this->assertNotEmpty();
         return $this->multiply($percentage)->divide(100, $roundingMode);
     }
 
     /** @return static */
     public function add(MoneyInterface $money): self
     {
+        $this->assertNotEmpty();
+        $this->assertSameCurrency($money);
+        Assertion::false($money->isEmpty(), 'Comparand must not be empty.');
         $added = $this->money->add(
             static::asBaseMoney($money->getAmount(), $money->getCurrency())
         );
@@ -69,29 +78,49 @@ class Money implements MoneyInterface
     /** @return static */
     public function subtract(MoneyInterface $money): self
     {
+        $this->assertNotEmpty();
+        $this->assertSameCurrency($money);
+        Assertion::false($money->isEmpty(), 'Comparand must not be empty.');
         $subtracted = $this->money->subtract(
             static::asBaseMoney($money->getAmount(), $money->getCurrency())
         );
         return new static($subtracted);
     }
 
+    /** @return static */
+    public static function makeEmpty(): self
+    {
+        return new static;
+    }
+
+    public function isEmpty(): bool
+    {
+        return $this->money === null;
+    }
+
     public function isZero(): bool
     {
+        $this->assertNotEmpty();
         return $this->money->isZero();
     }
 
     public function isPositive(): bool
     {
+        $this->assertNotEmpty();
         return $this->money->isPositive();
     }
 
     public function isNegative(): bool
     {
+        $this->assertNotEmpty();
         return $this->money->isNegative();
     }
 
     public function isLessThanOrEqual(MoneyInterface $money): bool
     {
+        $this->assertNotEmpty();
+        $this->assertSameCurrency($money);
+        Assertion::false($money->isEmpty(), 'Comparand must not be empty.');
         return $this->money->lessThanOrEqual(
             static::asBaseMoney($money->getAmount(), $money->getCurrency())
         );
@@ -99,18 +128,25 @@ class Money implements MoneyInterface
 
     public function isGreaterThanOrEqual(MoneyInterface $money): bool
     {
+        $this->assertNotEmpty();
+        $this->assertSameCurrency($money);
+        Assertion::false($money->isEmpty(), 'Comparand must not be empty.');
         return $this->money->greaterThanOrEqual(
             static::asBaseMoney($money->getAmount(), $money->getCurrency())
         );
     }
 
     /**
-     * @param string $value
+     * @param null|string $value
      * @return static
      */
     public static function fromNative($value): self
     {
-        Assertion::string($value, 'Must be a string.');
+        Assertion::nullOrString($value, 'Must be a string.');
+        if ($value === null) {
+            return new static;
+        }
+
         if (!preg_match('/^(?<amount>-?\d+)\s?(?<currency>[a-z][a-z0-9]*)$/i', $value, $matches)) {
             throw new InvalidArgumentException('Invalid amount.');
         }
@@ -125,14 +161,14 @@ class Money implements MoneyInterface
         return static::fromNative('0'.(string)$currency);
     }
 
-    public function toNative(): string
+    public function toNative(): ?string
     {
-        return $this->getAmount().$this->getCurrency();
+        return !$this->isEmpty() ? $this->getAmount().$this->getCurrency() : null;
     }
 
     public function __toString(): string
     {
-        return $this->toNative();
+        return (string)$this->toNative();
     }
 
     protected static function asBaseMoney(string $amount, string $currency): PhpMoney
@@ -140,7 +176,17 @@ class Money implements MoneyInterface
         return new PhpMoney($amount, new PhpCurrency($currency));
     }
 
-    final protected function __construct(PhpMoney $money)
+    protected function assertNotEmpty(): void
+    {
+        Assertion::false($this->isEmpty(), 'Money is empty.');
+    }
+
+    protected function assertSameCurrency(MoneyInterface $money): void
+    {
+        Assertion::eq($this->getCurrency(), $money->getCurrency(), 'Currencies must be identical.');
+    }
+
+    final protected function __construct(?PhpMoney $money = null)
     {
         $this->money = $money;
     }

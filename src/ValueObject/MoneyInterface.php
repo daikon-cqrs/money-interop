@@ -8,10 +8,11 @@
 
 namespace Daikon\Money\ValueObject;
 
+use Daikon\Interop\MakeEmptyInterface;
 use Daikon\ValueObject\ValueObjectInterface;
 use Money\Money;
 
-interface MoneyInterface extends ValueObjectInterface
+interface MoneyInterface extends MakeEmptyInterface, ValueObjectInterface
 {
     public const ROUND_UP = Money::ROUND_UP;
     public const ROUND_DOWN = Money::ROUND_DOWN;
