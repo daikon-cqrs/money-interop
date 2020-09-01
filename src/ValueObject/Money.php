@@ -68,7 +68,7 @@ class Money implements MoneyInterface
     {
         $this->assertNotEmpty();
         $this->assertSameCurrency($money);
-        Assertion::false($money->isEmpty(), 'Comparand must not be empty.');
+        Assertion::false($money->isEmpty(), 'Addition must not be empty.');
         $added = $this->money->add(
             static::asBaseMoney($money->getAmount(), $money->getCurrency())
         );
@@ -80,7 +80,7 @@ class Money implements MoneyInterface
     {
         $this->assertNotEmpty();
         $this->assertSameCurrency($money);
-        Assertion::false($money->isEmpty(), 'Comparand must not be empty.');
+        Assertion::false($money->isEmpty(), 'Subtraction must not be empty.');
         $subtracted = $this->money->subtract(
             static::asBaseMoney($money->getAmount(), $money->getCurrency())
         );
@@ -116,23 +116,23 @@ class Money implements MoneyInterface
         return $this->money->isNegative();
     }
 
-    public function isLessThanOrEqual(MoneyInterface $money): bool
+    public function isLessThanOrEqual(MoneyInterface $comparator): bool
     {
         $this->assertNotEmpty();
-        $this->assertSameCurrency($money);
-        Assertion::false($money->isEmpty(), 'Comparand must not be empty.');
+        $this->assertSameCurrency($comparator);
+        Assertion::false($comparator->isEmpty(), 'Comparator must not be empty.');
         return $this->money->lessThanOrEqual(
-            static::asBaseMoney($money->getAmount(), $money->getCurrency())
+            static::asBaseMoney($comparator->getAmount(), $comparator->getCurrency())
         );
     }
 
-    public function isGreaterThanOrEqual(MoneyInterface $money): bool
+    public function isGreaterThanOrEqual(MoneyInterface $comparator): bool
     {
         $this->assertNotEmpty();
-        $this->assertSameCurrency($money);
-        Assertion::false($money->isEmpty(), 'Comparand must not be empty.');
+        $this->assertSameCurrency($comparator);
+        Assertion::false($comparator->isEmpty(), 'Comparator must not be empty.');
         return $this->money->greaterThanOrEqual(
-            static::asBaseMoney($money->getAmount(), $money->getCurrency())
+            static::asBaseMoney($comparator->getAmount(), $comparator->getCurrency())
         );
     }
 
