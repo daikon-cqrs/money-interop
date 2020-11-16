@@ -9,7 +9,9 @@
 namespace Daikon\Money\Entity;
 
 use Daikon\Entity\EntityInterface;
+use Daikon\Money\ValueObject\MoneyInterface;
 
 interface TransactionInterface extends EntityInterface
 {
+    public function getAmount(): MoneyInterface;
 }
