@@ -158,7 +158,7 @@ class Money implements MoneyInterface
     public static function zero($currency = null): self
     {
         Assertion::regex($currency, '/^[a-z][a-z0-9]*$/i', 'Invalid currency.');
-        return static::fromNative('0'.(string)$currency);
+        return static::fromNative('0'.$currency);
     }
 
     public function toNative(): ?string
