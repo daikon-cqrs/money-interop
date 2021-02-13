@@ -29,8 +29,9 @@ final class PaymentServiceMapProvisioner implements ProvisionerInterface
                 $services[$serviceName] = $injector->define(
                     $serviceClass,
                     [
-                        ':connector' =>
-                            $serviceConfig['connector'] ? $connectorMap->get($serviceConfig['connector']) : null,
+                        ':connector' => isset($serviceConfig['connector'])
+                            ? $connectorMap->get($serviceConfig['connector'])
+                            : null,
                         ':settings' => $serviceConfig['settings'] ?? []
                     ]
                 )->make($serviceClass);

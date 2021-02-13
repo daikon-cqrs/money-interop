@@ -8,7 +8,7 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8.0",
         "daikon/boot": "master@dev",
         "daikon/data-structure": "master@dev",
         "daikon/interop": "master@dev",
