@@ -242,12 +242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/boot.git",
-                "reference": "8cba1d0e5fedce09268f333b88cec61953f02fd8"
+                "reference": "7971c76230c50f9ef19533198aebac0ebfbee2b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/8cba1d0e5fedce09268f333b88cec61953f02fd8",
-                "reference": "8cba1d0e5fedce09268f333b88cec61953f02fd8",
+                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/7971c76230c50f9ef19533198aebac0ebfbee2b6",
+                "reference": "7971c76230c50f9ef19533198aebac0ebfbee2b6",
                 "shasum": ""
             },
             "require": {
@@ -272,7 +272,7 @@
                 "middlewares/request-handler": "^2.0",
                 "middlewares/whoops": "^2.0",
                 "monolog/monolog": "^2.0",
-                "php": "^7.4|^8.0",
+                "php": "^8.0",
                 "psr/container": "^1.0",
                 "psr/log": "^1.0",
                 "rdlowrey/auryn": "^1.4",
@@ -311,9 +311,9 @@
             ],
             "support": {
                 "issues": "https://github.com/daikon-cqrs/boot/issues",
-                "source": "https://github.com/daikon-cqrs/boot/tree/v0.4"
+                "source": "https://github.com/daikon-cqrs/boot/tree/master"
             },
-            "time": "2021-02-13T18:46:22+00:00"
+            "time": "2022-11-26T13:33:13+00:00"
         },
         {
             "name": "daikon/config",
